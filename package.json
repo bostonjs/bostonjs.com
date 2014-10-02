@@ -1,0 +1,13 @@
+{
+  "name": "boston-js",
+  "description": "website for the boston-js meetup group",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "bookshelf": "^0.7.7",
+    "express": "4.x",
+    "jade": "1.7.0",
+    "knex": "^0.7.2",
+    "request": "^2.44.0"
+  }
+}
