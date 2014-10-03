@@ -16,7 +16,7 @@ This is the www home of the [Boston JS Meetup](http://www.meetup.com/boston_JS/)
 
 #### 1. Get an API Key from Meetup.com
 
-  Create a file in the root directory of this project called `KEY`. Visit [https://secure.meetup.com/meetup_api/key/] and cut and paste your Api Key into the KEY file. Save.
+  Create a file in the root directory of this project called `KEY`. Visit https://secure.meetup.com/meetup_api/key/ and cut and paste your Api Key into the KEY file. Save.
 
 #### 2. Install Dependencies
 
@@ -32,6 +32,6 @@ This is the www home of the [Boston JS Meetup](http://www.meetup.com/boston_JS/)
 
 #### 5. View index and detail
 
-  `/events` will give you an index of all events, linked to their meetup page
-  `/events/:id` will give you a JSON dump of an individual event
+-  `/events` will give you an index of all events, linked to their meetup page
+-  `/events/:id` will give you a JSON dump of an individual event
  
