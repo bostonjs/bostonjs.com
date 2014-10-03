@@ -1,3 +1,5 @@
+![boston skyline](public/img/skyline.png)
+
 # Boston JS
 
 ## What
