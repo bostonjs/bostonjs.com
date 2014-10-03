@@ -1,8 +1,6 @@
-doctype html
-html(lang="en")
-  head
-    title Boston JS
-  body
-    h1 DETAIL PAGE
-    h2= event.name
-    p= JSON.stringify(event)
+extends layout
+
+block append content
+  h1 DETAIL PAGE
+  h2= event.name
+  p= JSON.stringify(event)

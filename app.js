@@ -1,3 +1,4 @@
+var path = require('path');
 var fs = require('fs');
 var request = require('request');
 
@@ -7,7 +8,7 @@ var app = express();
 var jade = require('jade');
 app.set('view engine', 'jade');
 
-app.use(express.static(__dirname, 'public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 var Event = require('./modules/event');
 
@@ -20,8 +21,9 @@ app.get('/get_events', function(req, res){
 
     // using fake data because auth for bos_js is dumb
     // var API_URL = 'https://api.meetup.com/2/events?&key=3b56411d154021286d3373b56695f&group_id=884541&sign=true';
-    var API_URL = "https://api.meetup.com/2/events?&key=" + API_KEY + "&group_urlname=ny-tech";
+    var API_URL = "https://api.meetup.com/2/events?&key=" + API_KEY + "&group_id=884541&sign=true&status=past";
     request(API_URL, function(err, data){
+
       var events = JSON.parse(data.body)['results'];
 
       for(var i = 0; i < events.length; i++) {
