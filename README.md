@@ -18,7 +18,7 @@ This is the www home of the [Boston JS Meetup](http://www.meetup.com/boston_JS/)
 
 #### 1. Get an API Key from Meetup.com
 
-  Visit https://secure.meetup.com/meetup_api/key/ and get your API Key. Cut and paste it into the `KEY.txt` file. Save it and remove the extension so the file name is simply `KEY`.
+  Visit https://secure.meetup.com/meetup_api/key/ and get your API Key. Cut and paste it into the `db/KEY.txt` file. Save it and remove the extension so the file name is simply `KEY`.
 
 #### 2. Install Dependencies
 
