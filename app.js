@@ -53,8 +53,20 @@ app.get('/events', function(req,res){
 
   Event.query()
     .then(function(events){
-      console.log(events);
       res.render('index', { events: events });
+    });
+
+});
+
+app.get('/', function(req,res){
+
+  Event.query(function(qb){
+      qb.orderBy('id','DESC');
+      qb.limit(1);
+    })
+    .fetch()
+    .then(function(event){
+      res.render('detail', { event: event });
     });
 
 });
