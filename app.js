@@ -14,7 +14,7 @@ var Event = require('./modules/event');
 app.get('/get_events', function(req, res){
   
   // looks for a file KEY with your API key in it
-  fs.readFile('./KEY', function(err,data){
+  fs.readFile('db/KEY', function(err,data){
     if (err) throw err;
     var API_KEY = data;
 
