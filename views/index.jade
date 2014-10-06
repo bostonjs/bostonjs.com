@@ -5,7 +5,7 @@ block append content
   ul
     for event in events
       li
-        a(href=event.event_url)= event.name
+        a(href="/events/"+event.id)= event.name
 
 
   script(src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js")

@@ -55,7 +55,7 @@ app.get('/events', function(req,res){
 
   Event.query()
     .then(function(events){
-      res.render('index', { events: events });
+      res.render('index', { events: events.reverse() });
     });
 
 });
