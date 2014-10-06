@@ -46,7 +46,7 @@ app.get('/events/:id', function(req,res){
   new Event({id: req.params.id})
     .fetch()
     .then(function(event){
-      res.render('detail', { event: event });
+      res.render('detail', { event: event.toJSON() });
     });
 
 });
@@ -68,7 +68,7 @@ app.get('/', function(req,res){
     })
     .fetch()
     .then(function(event){
-      res.render('detail', { event: event });
+      res.render('detail', { event: event.toJSON() });
     });
 
 });
