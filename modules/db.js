@@ -9,6 +9,7 @@ var events_table = function (table) {
   table.increments();
   table.string('name');
   table.string('event_url');
+  table.string('description');
   table.string('venue');
   table.string('date');
   table.string('time');

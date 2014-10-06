@@ -28,10 +28,14 @@ app.get('/get_events', function(req, res){
 
       for(var i = 0; i < events.length; i++) {
         var event = events[i];
-        new Event({ name: event.name, event_url: event.event_url })
+        new Event({
+              name: event.name,
+              event_url: event.event_url,
+              description: event.description
+          })
           .save()
           .then(function(model){
-            console.log(model.id + " saved!")
+            console.log(model.id + " saved!");
           });
       }
 

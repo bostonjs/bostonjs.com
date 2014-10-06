@@ -3,4 +3,5 @@ extends layout
 block append content
   h3= "Boston.JS Number " + event.id + ":"
   h2= event.name
-  p= JSON.stringify(event)
+  p!= event.description
+  // p= JSON.stringify(event)
