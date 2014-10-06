@@ -18,10 +18,8 @@ app.get('/get_events', function(req, res){
   fs.readFile('db/KEY', function(err,data){
     if (err) throw err;
     var API_KEY = data;
+    var API_URL = "https://api.meetup.com/2/events?&key=" + API_KEY.toString().trim() + "&group_id=884541&sign=true&status=past";
 
-    // using fake data because auth for bos_js is dumb
-    // var API_URL = 'https://api.meetup.com/2/events?&key=3b56411d154021286d3373b56695f&group_id=884541&sign=true';
-    var API_URL = "https://api.meetup.com/2/events?&key=" + API_KEY + "&group_id=884541&sign=true&status=past";
     request(API_URL, function(err, data){
 
       var events = JSON.parse(data.body)['results'];
@@ -77,7 +75,7 @@ app.get('/', function(req,res){
 
 });
 
-var server = app.listen(3000, function() {
+var server = app.listen(3000, function) {
     console.log('Listening on port %d', server.address().port);
 });
 
