@@ -23,11 +23,24 @@ module.exports = function(grunt) {
         flatten: true,
         layout: ['app/templates/layout.hbs'],
         partials: ['app/partials/*.hbs'],
-        data: 'data/past.json'
+        data: 'data/*.json'
       },
       build: {
         src: 'app/pages/*.hbs',
         dest: 'tmp/'
+      }
+    },
+
+    htmlmin: {
+      options: {
+        removeComments: true,
+        collapseWhitespace: true
+      },
+      build: {
+        expand: true,
+        cwd: 'tmp',
+        src: ['*.html'],
+        dest: 'output'
       }
     }
   });
@@ -36,6 +49,7 @@ module.exports = function(grunt) {
     'clean',
     'copy',
     'assemble',
+    'htmlmin'
   ]);
 
   grunt.registerTask('default', 'An alias of build.', ['build']);
