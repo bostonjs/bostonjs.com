@@ -1,5 +1,5 @@
 module.exports = function(grunt) {
-  require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
+  require('load-grunt-tasks')(grunt);
   grunt.loadNpmTasks('assemble');
 
   grunt.initConfig({
@@ -13,7 +13,7 @@ module.exports = function(grunt) {
         expand: true,
         cwd: 'public',
         src: '**/*',
-        dest: 'tmp'
+        dest: 'output'
       }
     },
 
