@@ -1,0 +1,42 @@
+<h1> Submit a Talk </h1>
+
+<form action="/apply" method="POST" name="submission">
+  <h2>Personal Information</h2>
+  <label for="name">Name:</label>
+  <input id="name" type="text" name="name" class="required"/>
+  <label for="email">Email:</label>
+  <input id="email" type="email" name="email" class="required"/>
+  <label for="website">Website:</label>
+  <input id="website" type="text" name="website"/>
+  <label for="company">Company:</label>
+  <input id="company" type="text" name="company"/>
+  <label for="twitter">Twitter @:</label>
+  <input id="twitter" type="text" name="twitter"/>
+
+  <h2>Talk Information</h2>
+  <label for="title">Session Title:</label>
+  <input id="title" type="text" name="title" class="required"/>
+  <label for="abstract">Session Description:</label>
+  <input id="abstract" type="text" name="abstract" class="required"/>
+  <label for="notes">Note to Organizers:</label>
+  <input id="notes" type="text" name="notes"/>
+
+  <button type="submit">Submit</button>
+</form>
+
+<script>
+    var submissionForm = document.getElementsByName('submission')[0];
+
+    submissionForm.addEventListener('submit', function(event){
+
+      var requireds = document.getElementsByClassName('required');
+      for (var i = 0; i < requireds.length; i++){
+        if(requireds[i].value.length === 0){
+          event.preventDefault();
+          requireds[i].setAttribute("class", "error required");
+        } else {
+          requireds[i].setAttribute("class", "required");
+        }
+      }
+    });
+</script>

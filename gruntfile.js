@@ -3,6 +3,21 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('assemble');
 
   grunt.initConfig({
+
+    clean: {
+      tmp: ['tmp'],
+      output: ['output']
+    },
+
+    copy: {
+      public: {
+        expand: true,
+        cwd: 'public',
+        src: '**/*',
+        dest: 'output'
+      }
+    },
+
     assemble: {
       options: {
         flatten: true,
@@ -18,7 +33,9 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('build', 'Build the static site.', [
-    'assemble'
+    'clean',
+    'copy',
+    'assemble',
   ]);
 
   grunt.registerTask('default', 'An alias of build.', ['build']);

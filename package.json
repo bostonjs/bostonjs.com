@@ -14,6 +14,8 @@
   "devDependencies": {
     "assemble": "^0.4.42",
     "grunt": "^0.4.5",
-    "load-grunt-tasks": "^0.6.0"
+    "load-grunt-tasks": "^0.6.0",
+    "grunt-contrib-copy": "^0.6.0",
+    "grunt-contrib-clean": "^0.6.0"
   }
 }
