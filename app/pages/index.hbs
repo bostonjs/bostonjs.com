@@ -1,7 +1,11 @@
 <h1>INDEX PAGE</h1>
 <ul>
-  {{#each results}}
-    <li>{{data.name}}</li>
+  {{#each index.results}}
+    <li>
+      <a href="/events/{{ id }}">
+        {{ name }}
+      </a>
+    </li>
   {{/each}}
 </ul>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
