@@ -5,7 +5,8 @@ module.exports = function(grunt) {
   grunt.initConfig({
 
     clean: {
-      tmp: ['tmp']
+      tmp: ['tmp'],
+      output: ['output']
     },
 
     copy: {
