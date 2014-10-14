@@ -1,3 +1,5 @@
 node_modules
 KEY
 dev.sqlite3
+tmp
+data
