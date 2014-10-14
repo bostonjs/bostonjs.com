@@ -1,8 +1,22 @@
 module.exports = function(grunt) {
-  require('load-grunt-tasks')(grunt);
+  require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
   grunt.loadNpmTasks('assemble');
 
   grunt.initConfig({
+
+    clean: {
+      tmp: ['tmp']
+    },
+
+    copy: {
+      public: {
+        expand: true,
+        cwd: 'public',
+        src: '**/*',
+        dest: 'tmp'
+      }
+    },
+
     assemble: {
       options: {
         flatten: true,
@@ -18,7 +32,9 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('build', 'Build the static site.', [
-    'assemble'
+    'clean',
+    'copy',
+    'assemble',
   ]);
 
   grunt.registerTask('default', 'An alias of build.', ['build']);
