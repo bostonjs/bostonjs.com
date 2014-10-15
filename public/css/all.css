@@ -52,9 +52,30 @@ img {
   background: url(../img/charles.png) left -20% bottom 5% repeat-x;
   background-size: 90% auto;
   padding: 5% 5% 6.5% 5%;
+  position: relative;
   margin: 0 0 1em 0;
   -webkit-animation: sailin 2000s linear infinite;
   animation: sailin 2000s linear infinite;
+}
+.logo:before,
+.logo:after {
+  content: "";
+  display: block;
+  width: 4%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+.logo:before {
+  background: -webkit-linear-gradient( 90deg, #fae06e, rgba(255,255,255,0));
+  background: linear-gradient( 90deg, #fae06e, rgba(255,255,255,0));
+  left: 0;
+}
+.logo:after {
+  background: -webkit-linear-gradient( -90deg, #fae06e, rgba(255,255,255,0));
+  background: linear-gradient( -90deg, #fae06e, rgba(255,255,255,0));
+
+  right: 0;
 }
 .primary {
   border-bottom: 4px solid #3b3b3b;
