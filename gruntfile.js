@@ -49,6 +49,7 @@ module.exports = function(grunt) {
 
     assemble: {
       options: {
+        helpers: ['handlebars-helper-include', 'foo/*.js'],
         flatten: true,
         layout: ['app/templates/layout.hbs'],
         partials: ['app/partials/*.hbs'],
@@ -60,16 +61,6 @@ module.exports = function(grunt) {
       }
     },
 
-    assemble: {
-      options: {
-        // the 'handlebars-helper-include' npm module must also be listed in
-        // devDependencies for assemble to automatically resolve the helper
-        helpers: ['handlebars-helper-include', 'foo/*.js']
-      },
-      files: {
-        'dist/': ['src/templates/*.hbs']
-      }
-    },
 
     htmlmin: {
       options: {
