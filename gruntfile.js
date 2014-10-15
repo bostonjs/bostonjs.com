@@ -5,7 +5,6 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     pkg: '<json:package.json>',
-    banner: '<%= grunt.template.today("yyyy-mm-dd") %>\n',
     
     clean: {
       output: ['output'],
@@ -14,7 +13,6 @@ module.exports = function(grunt) {
 
     concat: {
       options: {
-        banner: '<%= banner %>'
       },
       js_initial: {
         src: [
@@ -88,7 +86,6 @@ module.exports = function(grunt) {
 
     cssmin: {
       options: {
-        banner: '<%= banner %>',
         stripBanners: true
       },
       css_main: {
