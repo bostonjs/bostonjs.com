@@ -1,5 +1,5 @@
-/*global module:false,require:false*/
 module.exports = function(grunt) {
+  var fs = require('fs');
   require('load-grunt-tasks')(grunt);
   grunt.loadNpmTasks('assemble');
 
@@ -17,24 +17,22 @@ module.exports = function(grunt) {
       },
       js_initial: {
         src: [
-          'public/_js/initial.config.js'
+          'public/js/initial.config.js'
         ],
-        dest: 'output/_js/initial.js'
+        dest: 'output/js/initial.js'
       },
       js_main: {
         src: [
-         //'public/_js/_lib/jquery.js',
-          'output/_js/_lib/*',
-         //'public/_js/globalenhance.js'
+          'public/js/lib/*'
         ],
-        dest: 'output/_js/main.js'
+        dest: 'output/js/main.js'
       },
       css_main: {
         src: [
-          'public/_css/_lib/*',
-          'public/_css/all.css',
+          'public/css/lib/*',
+          'public/css/all.css',
         ],
-        dest: 'output/_css/all.css'
+        dest: 'output/css/all.css'
       }
     },
 
@@ -44,6 +42,15 @@ module.exports = function(grunt) {
         cwd: 'public',
         src: '**/*',
         dest: 'output'
+      }
+    },
+
+    http: {
+      nest: {
+        options: {
+          url: 'http://api.bocoup.com/events?access_token=' + fs.readFileSync('./data/KEY'),
+        },
+        dest: 'data/index.json' 
       }
     },
 
@@ -60,7 +67,6 @@ module.exports = function(grunt) {
         dest: 'tmp/'
       }
     },
-
 
     htmlmin: {
       options: {
@@ -86,27 +92,17 @@ module.exports = function(grunt) {
         ],
         dest: '<%= concat.css_main.dest %>'
       }
-    },
-
-    criticalcss: {
-      custom_options: {
-        options: {
-          url: "http://newbostonjs.dev/",
-          filename : 'all.css',
-          outputfile: "output/_css/critical.css"
-        }
-      }
     }
   });
 
   grunt.registerTask('build', 'Build the static site.', [
-  // Default task.
     'clean',
-    'concat',
     'copy',
+    'concat',
+    'http',
     'assemble',
     'htmlmin',
-    'criticalcss'
+    'cssmin'
   ]);
 
   grunt.registerTask('default', 'An alias of build.', ['build']);
