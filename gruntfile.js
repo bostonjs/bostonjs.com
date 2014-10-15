@@ -56,11 +56,10 @@ module.exports = function(grunt) {
 
     assemble: {
       options: {
-        helpers: ['handlebars-helper-include', 'foo/*.js'],
         flatten: true,
         layout: ['app/templates/layout.hbs'],
         partials: ['app/partials/*.hbs'],
-        data: 'data/*.json'
+        data: ['data/*.json']
       },
       build: {
         src: 'app/pages/*.hbs',
@@ -101,8 +100,7 @@ module.exports = function(grunt) {
     'concat',
     'http',
     'assemble',
-    'htmlmin',
-    'cssmin'
+    'htmlmin'
   ]);
 
   grunt.registerTask('default', 'An alias of build.', ['build']);
