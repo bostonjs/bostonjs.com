@@ -188,3 +188,18 @@ img {
   font-size: .8em;
   margin: 0;
 }
+
+.past-events {
+  clear: both;
+  margin: 3em 0 5em 0;
+}
+
+.past-events .meta {
+  padding-bottom: .75em;
+}
+
+.past-events .event {
+  font-size: 2em;
+  margin-bottom: .15em;
+  line-height: 1;
+}

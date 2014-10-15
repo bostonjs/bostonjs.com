@@ -1,9 +1,9 @@
-<ul>
+<div class="past-events">
   {{#each index}}
-    <li>
-      <a href="/events/{{ id }}">
-        {{ name }}
-      </a>
-    </li>
+    <h2 class="event">
+      <span class="meta">#<b class="num">108</b></span>
+      <a href="/events/{{ id }}">{{ name }}</a>
+    </h2>
+    <p class="speaker">Presented by Muscles McTouchdown</p>
   {{/each}}
-</ul>
+</div>
