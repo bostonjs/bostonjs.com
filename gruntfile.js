@@ -49,18 +49,16 @@ module.exports = function(grunt) {
 
     assemble: {
       options: {
-        helpers: ['handlebars-helper-include', 'foo/*.js'],
         flatten: true,
         layout: ['app/templates/layout.hbs'],
         partials: ['app/partials/*.hbs'],
-        data: 'data/*.json'
+        data: ['data/*.json']
       },
       build: {
         src: 'app/pages/*.hbs',
         dest: 'tmp/'
       }
     },
-
 
     htmlmin: {
       options: {
@@ -86,16 +84,6 @@ module.exports = function(grunt) {
         ],
         dest: '<%= concat.css_main.dest %>'
       }
-    },
-
-    criticalcss: {
-      custom_options: {
-        options: {
-          url: "http://newbostonjs.dev/",
-          filename : 'all.css',
-          outputfile: "output/_css/critical.css"
-        }
-      }
     }
   });
 
@@ -105,8 +93,7 @@ module.exports = function(grunt) {
     'concat',
     'copy',
     'assemble',
-    'htmlmin',
-    'criticalcss'
+    'htmlmin'
   ]);
 
   grunt.registerTask('default', 'An alias of build.', ['build']);
