@@ -1,12 +1,41 @@
+/*global module:false,require:false*/
 module.exports = function(grunt) {
   require('load-grunt-tasks')(grunt);
   grunt.loadNpmTasks('assemble');
 
   grunt.initConfig({
-
+    pkg: '<json:package.json>',
+    banner: '<%= grunt.template.today("yyyy-mm-dd") %>\n',
     clean: {
       tmp: ['tmp'],
       output: ['output']
+    },
+
+    concat: {
+      options: {
+        banner: '<%= banner %>'
+      },
+      js_initial: {
+        src: [
+          'public/_js/initial.config.js'
+        ],
+        dest: 'output/_js/initial.js'
+      },
+      js_main: {
+        src: [
+         //'public/_js/_lib/jquery.js',
+          'output/_js/_lib/*',
+         //'public/_js/globalenhance.js'
+        ],
+        dest: 'output/_js/main.js'
+      },
+      css_main: {
+        src: [
+          'public/_css/_lib/*',
+          'public/_css/all.css',
+        ],
+        dest: 'output/_css/all.css'
+      }
     },
 
     copy: {
@@ -31,6 +60,17 @@ module.exports = function(grunt) {
       }
     },
 
+    assemble: {
+      options: {
+        // the 'handlebars-helper-include' npm module must also be listed in
+        // devDependencies for assemble to automatically resolve the helper
+        helpers: ['handlebars-helper-include', 'foo/*.js']
+      },
+      files: {
+        'dist/': ['src/templates/*.hbs']
+      }
+    },
+
     htmlmin: {
       options: {
         removeComments: true,
@@ -42,14 +82,40 @@ module.exports = function(grunt) {
         src: ['*.html'],
         dest: 'output'
       }
+    },
+
+    cssmin: {
+      options: {
+        banner: '<%= banner %>',
+        stripBanners: true
+      },
+      css_main: {
+        src: [
+          '<%= concat.css_main.dest %>'
+        ],
+        dest: '<%= concat.css_main.dest %>'
+      }
+    },
+
+    criticalcss: {
+      custom_options: {
+        options: {
+          url: "http://newbostonjs.dev/",
+          filename : 'all.css',
+          outputfile: "output/_css/critical.css"
+        }
+      }
     }
   });
 
   grunt.registerTask('build', 'Build the static site.', [
+  // Default task.
     'clean',
+    'concat',
     'copy',
     'assemble',
-    'htmlmin'
+    'htmlmin',
+    'criticalcss'
   ]);
 
   grunt.registerTask('default', 'An alias of build.', ['build']);
