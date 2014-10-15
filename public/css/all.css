@@ -143,12 +143,20 @@ img {
 .sponsors {
   margin-top: 4em;
 }
-
 .sponsor-hed {
   background: #ffeb94;
   display: inline-block;
   margin-left: -10em;
   padding: .3em .75em .25em 10em;
+}
+.logos {
+  clear: both;
+  text-align: center;
+  margin: 1em 0 3em 0;
+}
+.logos img {
+  display: inline-block;
+  max-width: 450px;
 }
 .sponsor-call {
   display: block;
@@ -171,5 +179,12 @@ img {
 
 .foot {
   background: #3b3b3b;
+  margin: 0;
+  padding: .85em 0 .75em 0;
+}
+.foot p {
+  color: #ddd;
+  display: block;
+  font-size: .8em;
   margin: 0;
 }
