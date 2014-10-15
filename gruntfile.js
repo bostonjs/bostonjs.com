@@ -43,6 +43,7 @@ module.exports = function(grunt) {
         cwd: 'public',
         src: [
           'img/*',
+          'css/fonts.css',
           'js/vendor/*',
           'favicon.ico'
         ],

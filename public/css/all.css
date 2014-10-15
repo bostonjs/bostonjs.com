@@ -2,7 +2,10 @@
   0%   { background-position: left 0 bottom 5% }
   100% { background-position: left 9999px bottom 5% }
 }
-
+@keyframes sailin {
+  0%   { background-position: left 0 bottom 5% }
+  100% { background-position: left 9999px bottom 5% }
+}
 
 * {
   -webkit-box-sizing: border-box;
@@ -12,6 +15,7 @@
 body {
   margin: 0;
   font-family: Klinik, serif;
+  overflow: hidden;
 }
 a { 
   color: #00A3DA;
@@ -25,9 +29,8 @@ p {
   line-height: 1.5;
 }
 .wrap {
-  margin: 0 auto;
-  max-width: 60em;
-  overflow: hidden;
+    margin: 0 auto;
+    max-width: 60em;
 }
 .a11y-hide {
   color: transparent;
@@ -45,13 +48,13 @@ img {
   background: #fae06e;
   padding-bottom: 4%;
 }
-
 .logo {
-  background: url(../_img/charles.png) left -20% bottom 5% repeat-x;
+  background: url(../img/charles.png) left -20% bottom 5% repeat-x;
   background-size: 90% auto;
   padding: 5% 5% 6.5% 5%;
   margin: 0 0 1em 0;
   -webkit-animation: sailin 2000s linear infinite;
+  animation: sailin 2000s linear infinite;
 }
 .primary {
   border-bottom: 4px solid #3b3b3b;
@@ -100,29 +103,59 @@ img {
   background: #3b3b3b;
   color: #fae06e;
 }
+
+
 .sitehead img {
   display: block;
   margin: 0 auto;
 }
 
-.feat {
-  padding: 1em;
-  max-width: 55em;
-  margin: 0 auto;
+.eventhead {
+  margin-bottom: 2em;
 }
+
 .event {
   margin-top: 1em;
   font-family: Klinik, serif;
-  font-size: 2.25em;
+  font-size: 2.5em;
+  margin-bottom: 0;
 }
 .event .meta {
-  font-size: .65em;
+  font-family: Open Sans, sans-serif;
+  font-size: .45em;
   display: block;
+  margin-bottom: -.4em;
 }
-
 .event .num {
   background: #ffeb94;
   display: inline-block;
+  font-family: Klinik, serif;
   font-weight: bold;
+  font-size: 1.2em;
   padding: 0 .15em; 
+}
+
+.speaker {
+  margin-top: 0;
+  font-size: .8em;
+}
+
+.sponsors {
+  margin-top: 4em;
+}
+
+.sponsor-hed {
+  background: #ffeb94;
+  display: inline-block;
+  margin-left: -10em;
+  padding: .3em .75em .25em 10em;
+}
+.sponsor-call {
+  display: block;
+  font-family: Open Sans, sans-serif;
+  text-align: center;
+}
+
+.coc {
+  background: rgba(100,100,100,.5);
 }
