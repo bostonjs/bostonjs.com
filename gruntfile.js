@@ -48,7 +48,7 @@ module.exports = function(grunt) {
     http: {
       nest: {
         options: {
-          url: 'http://api.bocoup.com/events?access_token=' + fs.readFileSync('./data/KEY'),
+          url: 'http://api.bocoup.com/event?access_token=' + fs.readFileSync('./data/KEY').trim(),
         },
         dest: 'data/index.json' 
       }
