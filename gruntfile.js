@@ -3,6 +3,16 @@ module.exports = function(grunt) {
   require('load-grunt-tasks')(grunt);
   grunt.loadNpmTasks('assemble');
 
+  grunt.registerTask('disassemble', 'Generates individual files and templates from event API data', function() {
+    var src = this.options().src;
+    var dest = this.options().dest;
+    var events = grunt.file.readJSON(src);
+    events.forEach(function(event) {
+      grunt.file.write(dest + event.id + '.json', JSON.stringify(event));
+    });
+    grunt.log.writeln(events.length + ' files written');
+  });
+
   grunt.initConfig({
     pkg: '<json:package.json>',
     
@@ -29,7 +39,7 @@ module.exports = function(grunt) {
       css_main: {
         src: [
           'public/css/lib/*',
-          'public/css/all.css',
+          'public/css/all.css'
         ],
         dest: 'output/css/all.css'
       }
@@ -55,6 +65,13 @@ module.exports = function(grunt) {
           url: 'http://api.bocoup.com/events?access_token=' + fs.readFileSync('./data/KEY').toString().trim(),
         },
         dest: 'data/index.json' 
+      }
+    },
+
+    disassemble: {
+      options: {
+        src: '<%= http.nest.dest %>',
+        dest: 'data/'
       }
     },
 
@@ -106,6 +123,7 @@ module.exports = function(grunt) {
     'copy',
     'concat',
     'http',
+    'disassemble',
     'assemble',
     'htmlmin',
     'cssmin',
