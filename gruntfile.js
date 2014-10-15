@@ -6,9 +6,10 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: '<json:package.json>',
     banner: '<%= grunt.template.today("yyyy-mm-dd") %>\n',
+    
     clean: {
-      tmp: ['tmp'],
-      output: ['output']
+      output: ['output'],
+      tmp: ['tmp']
     },
 
     concat: {
@@ -48,7 +49,7 @@ module.exports = function(grunt) {
     http: {
       nest: {
         options: {
-          url: 'http://api.bocoup.com/event?access_token=' + fs.readFileSync('./data/KEY').trim(),
+          url: 'http://api.bocoup.com/event?access_token=' + fs.readFileSync('./data/KEY'),
         },
         dest: 'data/index.json' 
       }
@@ -57,12 +58,12 @@ module.exports = function(grunt) {
     assemble: {
       options: {
         flatten: true,
-        layout: ['app/templates/layout.hbs'],
-        partials: ['app/partials/*.hbs'],
+        layout: ['views/templates/layout.hbs'],
+        partials: ['views/partials/*.hbs'],
         data: ['data/*.json']
       },
       build: {
-        src: 'app/pages/*.hbs',
+        src: 'views/pages/*.hbs',
         dest: 'tmp/'
       }
     },
@@ -95,12 +96,14 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('build', 'Build the static site.', [
-    'clean',
+    'clean:output',
     'copy',
     'concat',
-    'http',
+    //'http',
     'assemble',
-    'htmlmin'
+    'htmlmin',
+    'cssmin',
+    'clean:tmp'
   ]);
 
   grunt.registerTask('default', 'An alias of build.', ['build']);
