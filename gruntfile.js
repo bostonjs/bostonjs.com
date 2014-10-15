@@ -41,7 +41,11 @@ module.exports = function(grunt) {
       public: {
         expand: true,
         cwd: 'public',
-        src: '**/*',
+        src: [
+          'img/*',
+          'js/vendor/*',
+          'favicon.ico'
+        ],
         dest: 'output'
       }
     },
@@ -94,6 +98,10 @@ module.exports = function(grunt) {
       }
     }
   });
+
+  grunt.registerTask('cleanse', 'Clean up all generated/assembled content.', [
+    'clean'
+  ]);
 
   grunt.registerTask('build', 'Build the static site.', [
     'clean:output',
