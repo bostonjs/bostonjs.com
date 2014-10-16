@@ -10,8 +10,8 @@ module.exports = function(grunt) {
     var tmpl = this.options().tmpl;
     var events = grunt.file.readJSON(src);
     events.forEach(function(event) {
-      grunt.file.write(d_dest + event.id + '.json', JSON.stringify(event));
-      grunt.file.write(t_dest + event.id + '.hbs', tmpl.replace('detailID', event.id));
+      grunt.file.write(d_dest + "event" + event.id + '.json', JSON.stringify(event));
+      grunt.file.write(t_dest + "event" + event.id + '.hbs', tmpl.replace('detailID', "event" + event.id));
     });
     grunt.log.writeln(events.length + ' files written');
   });
