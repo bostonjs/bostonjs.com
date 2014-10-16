@@ -94,7 +94,12 @@ module.exports = function(grunt) {
       },
       details: {
         src: 'views/pages/details/*.hbs',
-        dest: 'tmp/'
+        dest: 'tmp/',
+        expand: true,
+        rename: function(dest, src) {
+          var replacement = dest + "events/" + src.replace("views/pages/details/","").replace("event","").replace(".hbs","") + "/index.html";
+          return replacement;
+        }
       }
     },
 
@@ -106,7 +111,7 @@ module.exports = function(grunt) {
       build: {
         expand: true,
         cwd: 'tmp',
-        src: ['*.html'],
+        src: ['*.html', '**/*.html'],
         dest: 'output'
       }
     },
