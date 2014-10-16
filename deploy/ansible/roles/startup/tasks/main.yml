@@ -1,6 +1,9 @@
 ---
 # start it up
 
+- name: create the necessary directories to remote
+  command: mkdir -p /mnt/bostonjs creates=/mnt/bostonjs
+
 - name: make sure code is on the box and in sync
   sudo: yes
   synchronize:
