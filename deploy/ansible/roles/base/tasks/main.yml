@@ -1,0 +1,8 @@
+---
+# configure base dependencies for nest
+
+- name: update apt-cache if needed
+  apt: update_cache=yes
+
+- name: make sure nginx is installed
+  apt: name=nginx state=present

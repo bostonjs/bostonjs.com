@@ -3,6 +3,11 @@
   "description": "website for the boston-js meetup group",
   "version": "0.0.1",
   "private": true,
+  "scripts": {
+    "get-secrets": "./.bin/get-secrets",
+    "provision": "ansible-playbook -i deploy/ansible/hosts deploy/ansible/provision.yml",
+    "deploy": "ansible-playbook -i deploy/ansible/hosts deploy/ansible/deploy.yml"
+  },
   "dependencies": {
     "lodash": "^2.4.1"
   },
@@ -12,14 +17,20 @@
     "helper-moment": "^0.1.3",
     "request": "^2.44.0",
     "assemble": "^0.4.42",
+    "bach": "^0.3.0",
+    "chalk": "^0.5.1",
     "grunt": "^0.4.5",
-    "grunt-http": "^1.4.1",
-    "grunt-contrib-copy": "^0.6.0",
     "grunt-contrib-clean": "^0.6.0",
-    "grunt-contrib-htmlmin": "^0.3.0",
-    "load-grunt-tasks": "^0.6.0",
     "grunt-contrib-concat": "0.1.3",
+    "grunt-contrib-copy": "^0.6.0",
     "grunt-contrib-cssmin": "0.5.0",
-    "grunt-contrib-watch": "0.3.1"
+    "grunt-contrib-htmlmin": "^0.3.0",
+    "grunt-contrib-watch": "0.3.1",
+    "grunt-http": "^1.4.1",
+    "hostile": "^0.7.0",
+    "load-grunt-tasks": "^0.6.0",
+    "mkdirp": "^0.5.0",
+    "ssh2": "^0.3.6",
+    "userhome": "^1.0.0"
   }
 }

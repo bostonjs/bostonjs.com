@@ -5,3 +5,4 @@ tmp
 data
 output
 views/pages/details
+config/secrets

@@ -25,7 +25,7 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     pkg: '<json:package.json>',
-    
+
     clean: {
       output: ['output'],
       tmp: ['tmp'],
@@ -73,7 +73,7 @@ module.exports = function(grunt) {
     http: {
       nest: {
         options: {
-          url: 'http://api.bocoup.com/events?access_token=' + fs.readFileSync('./data/KEY').toString().trim(),
+          url: 'http://api.bocoup.com/events?access_token=' + require('./config/secrets/nest.json').api_key
         },
         dest: 'data/events.json' 
       }
