@@ -1,9 +1,14 @@
 <div class="past-events">
-  {{#each index}}
+  {{#withSort index "id" dir="desc"}}
     <h2 class="event">
-      <span class="meta">#<b class="num">108</b></span>
+      <span class="meta">#<b class="num">{{ id }}</b></span>
       <a href="/events/{{ id }}">{{ name }}</a>
     </h2>
-    <p class="speaker">Presented by Muscles McTouchdown</p>
-  {{/each}}
+
+    <ul>
+    {{#each calls.0.submissions}}
+      <li class="speaker">{{ title }}, presented by {{ name }}</p>
+    {{/each }}
+  </ul>
+  {{/withSort}}
 </div>
