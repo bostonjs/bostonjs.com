@@ -1,5 +1,6 @@
 module.exports = function(grunt) {
   var fs = require('fs');
+  var _ = require('lodash');
   require('load-grunt-tasks')(grunt);
   grunt.loadNpmTasks('assemble');
 
@@ -9,9 +10,15 @@ module.exports = function(grunt) {
     var t_dest = this.options().t_dest;
     var tmpl = this.options().tmpl;
     var events = grunt.file.readJSON(src);
-    events.forEach(function(event) {
+    var lastIndex = events.length - 1;
+    _.chain(events).sortBy('date_start').value().forEach(function(event, index) {
       grunt.file.write(d_dest + "event" + event.id + '.json', JSON.stringify(event));
       grunt.file.write(t_dest + "event" + event.id + '.hbs', tmpl.replace('detailID', "event" + event.id));
+      // Handle the last element (the most recent meetup) specially, so that it is also the main site homepage
+      if ( index === lastIndex ) {
+        grunt.file.write(d_dest + 'index.json', JSON.stringify(event));
+        grunt.file.write(t_dest + 'index.hbs', tmpl.replace('detailID', "index"));
+      }
     });
     grunt.log.writeln(events.length + ' files written');
   });
@@ -68,7 +75,7 @@ module.exports = function(grunt) {
         options: {
           url: 'http://api.bocoup.com/events?access_token=' + fs.readFileSync('./data/KEY').toString().trim(),
         },
-        dest: 'data/index.json' 
+        dest: 'data/events.json' 
       }
     },
 
@@ -88,12 +95,24 @@ module.exports = function(grunt) {
         partials: ['views/partials/*.hbs'],
         data: ['data/*.json']
       },
-      build: {
-        src: 'views/pages/*.hbs',
-        dest: 'tmp/'
+      events: {
+        src: 'views/pages/events.hbs',
+        dest: 'tmp/',
+        expand: true,
+        rename: function(dest, src) {
+          return dest + 'events/index.html';
+        }
+      },
+      homepage: {
+        src: 'views/pages/details/index.hbs',
+        dest: 'tmp/',
+        expand: true,
+        rename: function(dest, src) {
+          return dest + 'index.html';
+        }
       },
       details: {
-        src: 'views/pages/details/*.hbs',
+        src: 'views/pages/details/event*.hbs',
         dest: 'tmp/',
         expand: true,
         rename: function(dest, src) {
