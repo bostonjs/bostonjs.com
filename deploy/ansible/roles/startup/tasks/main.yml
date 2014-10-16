@@ -2,6 +2,7 @@
 # start it up
 
 - name: make sure code is on the box and in sync
+  sudo: yes
   synchronize:
     src: ../../../../../output
-    dest: "{{base_path}}"
+    dest: /mnt/bostonjs/
