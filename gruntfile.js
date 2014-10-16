@@ -92,6 +92,7 @@ module.exports = function(grunt) {
       options: {
         flatten: true,
         layout: ['views/templates/layout.hbs'],
+        helpers: ['helper-moment', 'views/helpers/*.js'],
         partials: ['views/partials/*.hbs'],
         data: ['data/*.json']
       },
