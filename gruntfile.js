@@ -5,10 +5,13 @@ module.exports = function(grunt) {
 
   grunt.registerTask('disassemble', 'Generates individual files and templates from event API data', function() {
     var src = this.options().src;
-    var dest = this.options().dest;
+    var d_dest = this.options().d_dest;
+    var t_dest = this.options().t_dest;
+    var tmpl = this.options().tmpl;
     var events = grunt.file.readJSON(src);
     events.forEach(function(event) {
-      grunt.file.write(dest + event.id + '.json', JSON.stringify(event));
+      grunt.file.write(d_dest + event.id + '.json', JSON.stringify(event));
+      grunt.file.write(t_dest + event.id + '.hbs', tmpl.replace('detailID', event.id));
     });
     grunt.log.writeln(events.length + ' files written');
   });
@@ -18,7 +21,8 @@ module.exports = function(grunt) {
     
     clean: {
       output: ['output'],
-      tmp: ['tmp']
+      tmp: ['tmp'],
+      details: ['views/pages/details/']
     },
 
     concat: {
@@ -71,7 +75,9 @@ module.exports = function(grunt) {
     disassemble: {
       options: {
         src: '<%= http.nest.dest %>',
-        dest: 'data/'
+        d_dest: 'data/',
+        t_dest: 'views/pages/details/',
+        tmpl: fs.readFileSync('./views/pages/detail.hbs').toString().trim()
       }
     },
 
@@ -84,6 +90,10 @@ module.exports = function(grunt) {
       },
       build: {
         src: 'views/pages/*.hbs',
+        dest: 'tmp/'
+      },
+      details: {
+        src: 'views/pages/details/*.hbs',
         dest: 'tmp/'
       }
     },
