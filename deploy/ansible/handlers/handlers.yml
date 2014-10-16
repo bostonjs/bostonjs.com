@@ -1,0 +1,5 @@
+---
+# standard handlers to share globally
+
+- name: restart nginx
+  service: name=nginx state=restarted

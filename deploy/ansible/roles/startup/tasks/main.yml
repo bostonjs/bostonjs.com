@@ -1,0 +1,7 @@
+---
+# start it up
+
+- name: make sure code is on the box and in sync
+  synchronize:
+    src: ../../../../../output
+    dest: "{{base_path}}"

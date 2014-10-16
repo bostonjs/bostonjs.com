@@ -1,0 +1,6 @@
+---
+# configure nginx
+
+- name: make sure nginx has a configuration file
+  template: src=bostonjs.conf dest=/etc/nginx/conf.d/bostonjs.conf backup=no
+  notify: restart nginx

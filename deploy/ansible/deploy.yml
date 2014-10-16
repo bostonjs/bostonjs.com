@@ -1,0 +1,11 @@
+---
+# deploy production machine for live use
+
+- hosts:
+    - production
+  remote_user: ubuntu
+  sudo: yes
+  roles:
+    - startup
+  handlers:
+    - include: handlers/handlers.yml

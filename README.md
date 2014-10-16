@@ -37,4 +37,3 @@ This is the www home of the [Boston JS Meetup](http://www.meetup.com/boston_JS/)
 -  `/` will give you the most recent event
 -  `/events` will give you an index of all events, linked to their meetup page
 -  `/events/:id` will give you a JSON dump of an individual event
- 
