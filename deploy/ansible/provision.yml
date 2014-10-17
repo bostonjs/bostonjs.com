@@ -9,6 +9,7 @@
     - base
     - configure
     - nginx
+    - services
     - startup
   handlers:
     - include: handlers/handlers.yml

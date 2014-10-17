@@ -5,7 +5,19 @@
   command: mkdir -p /mnt/bostonjs creates=/mnt/bostonjs
 
 - name: make sure code is on the box and in sync
-  sudo: yes
   synchronize:
-    src: ../../../../../output
-    dest: /mnt/bostonjs/
+    src: ../../../../../
+    dest: "{{base_path}}"
+    rsync_opts:
+      - --include=node_modules/***
+      - --include=output/***
+      - --include=app.js
+      - --exclude='.*'
+      - --exclude='*'
+
+- name: make sure api log file exists
+  file: path={{api_log_file}} state=touch mode=0666 owner=www-data group=www-data
+
+- name: (re)start the api
+  command: /bin/true
+  notify: restart api
