@@ -3,12 +3,31 @@
     {{> meetupDate }}
     {{ name }}
   </h2>
-  <ul>
-  {{#each calls.0.submissions}}
-  <li class="speaker">
-    <img src='{{#gravatar email size="64"}}{{/gravatar}}'>
-    {{ title }}, presented by {{ name }}
-  </li>
-  {{/each }}
   </ul>
+
+  <!-- if event calls is past show speakers, otherwise show submission -->
+  <div class="event">
+    {{#ifDate calls.0.date_end "past"}}
+      <ul>
+        {{#each calls.0.submissions}}
+          <li class="speaker">
+          <img src='{{#gravatar email size="64"}}{{/gravatar}}'>
+        {{ title }}, presented by {{ name }}
+          </li>
+        {{/each }}
+    {{else}}
+      <div class="submission">
+        {{> form}}
+      </div>
+    {{/ifDate}}
+  </div>
+  
+  <!-- if event is in future show registration -->
+  {{#ifDate date_start "future"}}
+    <div class="registration">
+      {{> registration }}
+    </div>
+  {{/ifDate}}
+
+
 </div>
