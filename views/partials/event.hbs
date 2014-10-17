@@ -3,18 +3,18 @@
     {{> meetupDate }}
     {{ name }}
   </h2>
-  </ul>
 
   <!-- if event calls is past show speakers, otherwise show submission -->
   <div class="event">
     {{#ifDate calls.0.date_end "past"}}
       <ul>
         {{#each calls.0.submissions}}
-          <li class="speaker">
+        <li class="speaker">
           <img src='{{#gravatar email size="64"}}{{/gravatar}}'>
-        {{ title }}, presented by {{ name }}
-          </li>
+          <div class="title">{{ title }}</div><div class="presented">Presented by {{ name }}</div>
+        </li>
         {{/each }}
+      </ul>
     {{else}}
       <div class="submission">
         {{> form}}
