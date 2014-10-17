@@ -14,7 +14,7 @@
 }
 body {
   margin: 0;
-  font-family: Klinik, serif;
+  font-family: Open Sans, sans-serif;
   overflow-x: hidden;
 }
 a { 
@@ -27,6 +27,13 @@ a {
 p {
   font-family: Open Sans, sans-serif;
   line-height: 1.5;
+}
+h1, h2, h3, .primary a {
+  font-family: Klinik, serif;
+}
+ul {
+  list-style: none;
+  padding: 0;
 }
 .wrap {
     margin: 0 auto;
@@ -43,7 +50,6 @@ p {
 img {
   max-width: 100%;
 }
-
 .sitehead {
   background: #fae06e;
   padding-bottom: 4%;
@@ -74,7 +80,6 @@ img {
 .logo:after {
   background: -webkit-linear-gradient( -90deg, #fae06e, rgba(255,255,255,0));
   background: linear-gradient( -90deg, #fae06e, rgba(255,255,255,0));
-
   right: 0;
 }
 .primary {
@@ -124,17 +129,13 @@ img {
   background: #3b3b3b;
   color: #fae06e;
 }
-
-
 .sitehead img {
   display: block;
   margin: 0 auto;
 }
-
 .eventhead {
   margin-bottom: 2em;
 }
-
 .event {
   margin-top: 1em;
   font-family: Klinik, serif;
@@ -155,12 +156,17 @@ img {
   font-size: 1.2em;
   padding: 0 .1em; 
 }
-
 .speaker {
-  margin-top: 0;
-  font-size: .8em;
+  overflow: auto;
 }
-
+.speaker img {
+  float: left;
+  margin: 0 1em 1em 0;
+}
+.speaker .title {
+  font-size: 1.3em;
+  font-weight: bold;
+}
 .sponsors {
   margin-top: 4em;
 }
