@@ -1,6 +1,6 @@
 <h1> Submit a Talk </h1>
 
-<form action="/apply" method="POST" name="submission">
+<form action="/api.boston-js.org" method="POST" name="submission">
   <h2>Personal Information</h2>
   <label for="name">Name:</label>
   <input id="name" type="text" name="name" class="required"/>
@@ -20,6 +20,7 @@
   <input id="abstract" type="text" name="abstract" class="required"/>
   <label for="notes">Note to Organizers:</label>
   <input id="notes" type="text" name="notes"/>
+  <input type="text" name="call_id" value="{{ calls.0.id }}"/>
 
   <button type="submit">Submit</button>
 </form>

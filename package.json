@@ -9,7 +9,9 @@
     "deploy": "ansible-playbook -i deploy/ansible/hosts deploy/ansible/deploy.yml"
   },
   "dependencies": {
-    "lodash": "^2.4.1"
+    "express": "^4.9.7",
+    "lodash": "^2.4.1",
+    "request": "^2.45.0"
   },
   "devDependencies": {
     "MD5": "^1.2.1",
