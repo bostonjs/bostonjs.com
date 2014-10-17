@@ -1,11 +1,9 @@
 <div class="eventhead">
-  <h2 class="event">
-    {{> meetupDate }}
-    {{ name }}
-  </h2>
+  {{> meetupHeader }}
 
   <!-- if event calls is past show speakers, otherwise show submission -->
   <div class="event">
+    <p>{{{ description }}}</p>
     {{#ifDate calls.0.date_end "past"}}
       <ul>
         {{#each calls.0.submissions}}

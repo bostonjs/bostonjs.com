@@ -1,0 +1,50 @@
+MeetupId,Name,Title,Description,Email,Website,Company,Twitter
+9952266,Chris Bowen,JavaScript for IE8,,,,Microsoft,cbowen
+10153000,Rob Larsen,JavaScript Library Comparisons,,rob@htmlcssjavascript.com,,,robreact
+10154231,"Rick Waldron, Boaz Sender",GenevaJS,,admin@bocoup.com,,,rwaldron
+10578969,Alistair MacDonald,Crash Course in HTML5 & an Introduction to Processing.js,,,,,f1lt3r
+10769074,Dmitriy Dunin,Interacting with the DOM in JavaScript,,,,,
+11063968,Seung Chan Lim,JavaScript Dataflow Architecture,,,,,seungchan
+11388339,Jim Wilson,The Often Misunderstood Features of JavaScript Explained,,,,,hexlib
+11105205,Jeff Selig,Search Engine Optimization Overview,,,bostonmediadomain.com,bostonmediadomain.com,SEOSEM
+11445490,Jacob Rus,"The Node project, and the js.io project",,,,,
+12407128,Rob Larsen,JavaScript 101: Using JavaScript to Add Interactivity to Your Web Site,,rob@htmlcssjavascript.com,,,robreact
+11536445,Michael Erlewine,Extending the Browser with Jetpack,,,mitcho.com,,themitcho
+12432104,Jim Wilson,Hexlib: A JavaScript library for creating web games,,,hexlib.com,,hexlib
+12427166,Eric Ferraiuolo,Photos Around You,,,,,ericf
+14240763,Nick Cammarata,Popcorn.js - an open-source project to add dynamic content to video elements,,,nickcammarata,,nicklovescode
+14390106,Boaz Sender,CouchDB for JavaScript Programmers,,,,,boazsender
+14869541,Mitchell Foley,Server-side Javascript: Node.js Introduction,,,,,
+15696752,Michael Bolin,Closure Tools: Principles and Practice,,,blog.bolinfest.com,,bolinfest
+15933308,Aaron White,Node.js FTW,,,aaronwhite.vc,,aaronwhite
+16773134,Rick Waldron,Advanced HTML5 Video with Popcorn.js,,rick@bocoup.com,,,rwaldron
+16298627,John Hann,"Using AMD loaders, such as RequireJS, to write and manage modular javascript",,,,,unscriptable
+21315441,Aaron White,Sencha Ext and Sencha Touch,,,,,aaronwhite
+29722521,Pascal Rettig,Mobile Web-App Development,,,,http://cykod.com/blog,cykod
+32306542,Jim Wilson,Advanced Fundamentals of JavaScript Development,,,,,hexlib
+34599802,Christoph Dorn,Using CommonJS with PINF JavaScript Loader,,,,,
+41116762,Joe Morgan,"JavaScript Style, Code Conventions & Quality",,,,,
+41308842,Alvin Crespo,"MVC Patterns, Frameworks & Templates",,,,alvincrespo.github.io,alvincrespo
+44663732,Eric Fernberg,RightJS - High Performance JavaScript,,,http://rightjs.org,,EFernie
+50724982,Eric Strathmeyer,The Promises Pattern in JavaScript,,,http://vawks.com/,,strathmeyer
+55375282,Adam Buggia,Choosing CoffeeScript,,,,,abuggia
+69151472,Adam Lehman,Brackets: An Open Source Code Editor For The Web,,,,,adrocknaphobia
+98919542,Rick Waldron,The Future of JavaScript,,rick@bocoup.com,,Bocoup,rwaldron
+103663842,Ben Alman,"Grunt, the task-based command line build tool for JS projects",,ben@bocoup.com,,Bocoup,cowboy
+103675042,John Hann,The future of JS modules and dependency management,,,,,unscriptable
+113317172,Paul Irish,Paul Irish tells it like it is,,,,Google,paulirish
+121041442,Irene Ros,Client Side Data Management,,irene@bocoup.com,,,iros
+126581692,Sean Creeley,Building Apps with Ember (a postmortem),,,,,screeley
+139338322,"Allen Wirfs-Brock, Douglas Crockford, Brendan Eich, Rick Waldron",TC-39 Panel,,,,,
+141154642,Anne van Kesteren,W3C TAG Panel,,,,,
+141156512,Tom Dale,Cards are the Future of the Web: How Do We Build Them?,,,,Tilde,tomdale
+185938212,Adam J. Sontag,You Might Not Not Need jQuery,,adam@bocoup.com,http://ajpiano.com,Bocoup,ajpiano
+185938212,Jenn Schiffer,Making 8 Bit Art,,jenn@bocoup.com,http://sandwich.technology,Bocoup,jennschiffer
+190739322,Tim Griesser,Making relational cool again,,,,,tgriesser
+191613012,Daniel Appelquist,W3C TAG Panel Deux,,,,,
+199002992,Ashley Williams,How to Train Your Programmer,,ashley@bocoup.com,,Bocoup,ag_dubs
+199002992,Mike Pennisi,"JavaScript Unit, User Interaction, and Integration Testing",,mike@bocoup.com,,Bocoup,jugglinmike
+200292202,Evelyn Eastmond,A Talk By Evelyn Eastmond,,,,,evhan55
+200292202,Darius Kazemi,A Talk by Darius Kazemi,,,,,tinysubversions
+200292202,Kawaandeep Virdee,A Talk By Kawandeep Virdee,,,,,whichlight
+205445122,"Allen Wirfs-Brock, Brendan Eich, Domenic Denicola, Mark S. Miller, Rick Waldron",TC-39 Panel Deux,,,,,
