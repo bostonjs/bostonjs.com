@@ -1,26 +1,52 @@
 <h1> Submit a Talk </h1>
 
 <form action="/api.boston-js.org" method="POST" name="submission">
-  <h2>Personal Information</h2>
-  <label for="name">Name:</label>
-  <input id="name" type="text" name="name" class="required"/>
-  <label for="email">Email:</label>
-  <input id="email" type="email" name="email" class="required"/>
-  <label for="website">Website:</label>
-  <input id="website" type="text" name="website"/>
-  <label for="company">Company:</label>
-  <input id="company" type="text" name="company"/>
-  <label for="twitter">Twitter @:</label>
-  <input id="twitter" type="text" name="twitter"/>
+  
+  <div class="info">
+    <h2>Personal Information</h2>
+    
+    <div class="field">
+      <label for="name">Name</label>
+      <input id="name" type="text" name="name" class="required"/>
+    </div>
 
-  <h2>Talk Information</h2>
-  <label for="title">Session Title:</label>
-  <input id="title" type="text" name="title" class="required"/>
-  <label for="abstract">Session Description:</label>
-  <input id="abstract" type="text" name="abstract" class="required"/>
-  <label for="notes">Note to Organizers:</label>
-  <input id="notes" type="text" name="notes"/>
-  <input type="text" name="call_id" value="{{ calls.0.id }}"/>
+    <div class="field">
+      <label for="email">Email</label>
+      <input id="email" type="email" name="email" class="required"/>
+    </div>    
+
+    <div class="field">
+      <label for="website">Website</label>
+      <input id="website" type="text" name="website"/>
+    </div>    
+    
+    <div class="field">
+      <label for="company">Company</label>
+      <input id="company" type="text" name="company"/>
+    </div>    
+
+    <div class="field">
+      <label for="twitter">Twitter</label>
+      <input id="twitter" type="text" name="twitter"/>
+    </div>
+  </div>
+
+  <div class="info">
+    <h2>Talk Information</h2>
+    <div class="field">
+      <label for="title">Session Title:</label>
+      <input id="title" type="text" name="title" class="required"/>
+    </div>
+    <div class="field">
+      <label for="abstract">Session Description:</label>
+      <input id="abstract" type="text" name="abstract" class="required"/>
+    </div>   
+    <div class="field">
+      <label for="notes">Note to Organizers:</label>
+      <input id="notes" type="text" name="notes"/>
+    </div>
+      <input type="hidden" name="call_id" value="{{ calls.0.id }}"/>
+  </div>
 
   <button type="submit">Submit</button>
 </form>
