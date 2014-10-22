@@ -36,8 +36,9 @@ ul {
   padding: 0;
 }
 .wrap {
-    margin: 0 auto;
-    max-width: 60em;
+  margin: 0 auto;
+  max-width: 60em;
+  padding: 1em;
 }
 .a11y-hide {
   color: transparent;
@@ -59,7 +60,7 @@ img {
   background-size: 90% auto;
   padding: 5% 5% 6.5% 5%;
   position: relative;
-  margin: 0 0 1em 0;
+  margin: 0 0 5% 0;
   -webkit-animation: sailin 2000s linear infinite;
   animation: sailin 2000s linear infinite;
 }
@@ -97,33 +98,16 @@ img {
   border: solid #3b3b3b;
   border-width: 4px 4px 0px 4px;
   color: #3b3b3b;
-  display: inline-block;
   font-weight: bold;
   font-size: 1.1em;
   float: left;
-  margin: 0;
-  text-decoration: none;
   text-transform: uppercase;
   min-width: 50%;
+  padding: .5em 0;
 }
 .primary a:nth-child(odd) {
   border-right-width: 0;
   clear: left;
-}
-@media ( min-width: 40em ) {
-  .primary {
-    border: none;
-    float: none;
-  }
-  .primary a,
-  .primary a:nth-child(odd) {
-    border-width: 4px;
-    float: none;
-    width: auto;
-    margin: 0 .5em;
-    min-width: 1px;
-    padding: .5em 4.5em .45em 4.5em;
-  }
 }
 .primary a:hover {
   background: #3b3b3b;
@@ -142,9 +126,8 @@ img {
 }
 .event .meta {
   font-family: Open Sans, sans-serif;
-  font-size: .45em;
+  font-size: .7em;
   display: block;
-  margin-bottom: -.4em;
 }
 .event .num {
   background: #ffeb94;
@@ -153,6 +136,9 @@ img {
   font-weight: bold;
   font-size: 1.2em;
   padding: 0 .1em; 
+}
+.past-events ul {
+  margin: .25em 0em 2em 0em;
 }
 .speaker {
   overflow: auto;
@@ -169,7 +155,7 @@ img {
 .sponsors {
   margin-top: 4em;
 }
-.sponsor-hed {
+.title-hed {
   background: #ffeb94;
   display: inline-block;
   margin-left: -10em;
@@ -182,14 +168,13 @@ img {
 }
 .logos img {
   display: inline-block;
-  max-width: 450px;
+  width: 450px;
 }
 .sponsor-call {
   display: block;
   font-family: Open Sans, sans-serif;
   text-align: center;
 }
-
 .coc {
   background: #eee;
   padding: 1em 0;
@@ -214,21 +199,6 @@ img {
   font-size: .8em;
   margin: 0;
 }
-
-.past-events {
-  clear: both;
-  margin: 3em 0 5em 0;
-}
-
-.past-events .meta {
-  padding-bottom: .75em;
-}
-
-.past-events .event {
-  font-size: 2em;
-  margin-bottom: .15em;
-  line-height: 1;
-}
 form label{
   display: block;
   margin-bottom: .3em;
@@ -245,7 +215,7 @@ form .info {
 form .field {
   margin: 0 1em 1em 0;
   float: left;
-  width: 30%;
+  width: 100%;
 }
 form button {
   border: none;
@@ -258,4 +228,29 @@ form button {
 }
 form button:hover {
   background: #0294C5;
+}
+
+@media ( min-width: 25em ) {
+  form .field {
+    width: 45%;
+  }
+}
+
+@media ( min-width: 40em ) {
+  .primary {
+    border: none;
+    float: none;
+  }
+  .primary a,
+  .primary a:nth-child(odd) {
+    border-width: 4px;
+    float: none;
+    width: auto;
+    margin: 0 .5em;
+    min-width: 1px;
+    padding: .5em 4.5em .45em 4.5em;
+  }
+  form .field {
+    width: 30%;
+  }
 }
