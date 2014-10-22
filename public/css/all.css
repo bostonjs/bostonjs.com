@@ -84,7 +84,7 @@ img {
   right: 0;
 }
 .primary {
-  border-bottom: 4px solid #3b3b3b;
+  border-bottom: 2px solid #3b3b3b;
   margin: 0 2.5% 1px 2.5%; /* 1px fixes a Chrome rounding error */
   text-align: center;
   width: 95%;
@@ -96,7 +96,7 @@ img {
 }
 .primary a {
   border: solid #3b3b3b;
-  border-width: 4px 4px 0px 4px;
+  border-width: 2px 2px 0px 2px;
   color: #3b3b3b;
   font-weight: bold;
   font-size: 1.1em;
@@ -233,6 +233,12 @@ form button:hover {
 @media ( min-width: 25em ) {
   form .field {
     width: 45%;
+  }
+  .primary {
+    border-bottom: 3px solid #3b3b3b;
+  }
+  .primary a { 
+    border-width: 3px 3px 0px 3px;
   }
 }
 
