@@ -84,10 +84,9 @@ img {
   right: 0;
 }
 .primary {
-  border-bottom: 2px solid #3b3b3b;
-  margin: 0 2.5% 1px 2.5%; /* 1px fixes a Chrome rounding error */
+  margin-bottom: 1px; /* fixes a Chrome rounding error */
   text-align: center;
-  width: 95%;
+  width: 100%;
 }
 .primary:after {
   clear: both;
@@ -96,22 +95,18 @@ img {
 }
 .primary a {
   border: solid #3b3b3b;
-  border-width: 2px 2px 0px 2px;
-  color: #3b3b3b;
+  border-width: 2px 2px 2px 2px;
+  color: #FBDF66;
   font-weight: bold;
   font-size: 1.1em;
-  float: left;
   text-transform: uppercase;
   min-width: 50%;
-  padding: .5em 0;
-}
-.primary a:nth-child(odd) {
-  border-right-width: 0;
-  clear: left;
+  padding: .2em.5em;
+  background: #3b3b3b;
 }
 .primary a:hover {
-  background: #3b3b3b;
-  color: #fae06e;
+  background: #FBDF66;
+  color: #3b3b3b;
 }
 .sitehead img {
   display: block;
@@ -234,23 +229,18 @@ form button:hover {
   form .field {
     width: 45%;
   }
-  .primary {
-    border-bottom: 3px solid #3b3b3b;
-  }
   .primary a { 
-    border-width: 3px 3px 0px 3px;
+    border-width: 3px;
   }
 }
 
 @media ( min-width: 40em ) {
   .primary {
     border: none;
-    float: none;
   }
   .primary a,
   .primary a:nth-child(odd) {
     border-width: 4px;
-    float: none;
     width: auto;
     margin: 0 .5em;
     min-width: 1px;
