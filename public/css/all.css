@@ -52,6 +52,9 @@ ul {
   overflow: auto;
   color: #3b3b3b;
 }
+.rsvp h2 {
+  font-size: 1.3em;
+}
 .rsvp .paul {
   float: right;
 }
