@@ -20,9 +20,14 @@
     <div class="main-container">
       <div class="main wrapper clearfix">
         <div class="wrap">
-          {{> body }}
+          <div class="sidebar">
+            {{> sidebar }}
+          </div>
+          <div class="col-left">
+            {{> body }}
+          </div>
+          {{> sponsors }}
         </div>
-
         {{> coc }}
     </div>
     {{> footer }}

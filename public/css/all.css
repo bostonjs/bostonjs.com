@@ -27,6 +27,8 @@ a {
 p {
   font-family: Open Sans, sans-serif;
   line-height: 1.5;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 h1, h2, h3, .primary a {
   font-family: Klinik, serif;
@@ -39,6 +41,26 @@ ul {
   margin: 0 auto;
   max-width: 60em;
   padding: 1em;
+}
+.sidebar {
+  background: #fae06e;
+  padding: 1em;
+  text-align: center;
+}
+.rsvp {
+  border: solid #3b3b3b;
+  overflow: auto;
+  color: #3b3b3b;
+}
+.rsvp .paul {
+  float: right;
+}
+.rsvp p {
+  margin-bottom: 0
+}
+.rsvp p a { 
+  display: block;
+  margin: 1em 0;
 }
 .a11y-hide {
   color: transparent;
@@ -93,7 +115,7 @@ img {
   content: "";
   display: block;
 }
-.primary a {
+.primary a, .sidebar a.call {
   border: solid #3b3b3b;
   border-width: 2px 2px 2px 2px;
   color: #FBDF66;
@@ -104,9 +126,12 @@ img {
   padding: .2em.5em;
   background: #3b3b3b;
 }
-.primary a:hover {
+.primary a:hover, .sidebar a.call:hover {
   background: #FBDF66;
   color: #3b3b3b;
+}
+.sidebar a.call {
+  padding: 0.2em 2em;
 }
 .sitehead img {
   display: block;
@@ -149,6 +174,7 @@ img {
 }
 .sponsors {
   margin-top: 4em;
+  clear: both;
 }
 .title-hed {
   background: #ffeb94;
@@ -248,5 +274,20 @@ form button:hover {
   }
   form .field {
     width: 30%;
+  }
+  .col-left {
+    width: 70%;
+    float: left;
+    padding-right: 2em;
+  }
+  .sidebar {
+    width: 30%;
+    float: right;
+    margin-top: 1.5em;
+  }
+  .paul {
+    background-image: url(../img/paul-revere.jpg);
+    width: 185px;
+    height: 134px;
   }
 }
