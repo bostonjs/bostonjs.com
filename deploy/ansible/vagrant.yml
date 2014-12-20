@@ -8,6 +8,8 @@
     - base
     - configure
     - development
+    - services
     - nginx
+    - startup
   handlers:
     - include: handlers/handlers.yml

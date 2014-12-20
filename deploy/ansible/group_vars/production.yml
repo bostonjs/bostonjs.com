@@ -3,7 +3,12 @@
 
 env: production
 hostname: bostonjs
-base_path: /mnt/bostonjs/output
+base_path: /mnt/bostonjs
+public_path: "{{base_path}}/output"
 fqdn: boston-js.org
-port: 80
+
+api_fqdn: "api.{{fqdn}}"
+api_port: 8080
+api_log_file: /var/log/api
+
 ansible_ssh_private_key_file: "{{ lookup('env', 'PWD') }}/config/secrets/bostonjs.pem"

@@ -1,0 +1,5 @@
+---
+# configure services
+
+- name: make sure the api daemon is loaded
+  template: src=api.conf dest=/etc/init/api.conf backup=no

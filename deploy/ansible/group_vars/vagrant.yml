@@ -1,8 +1,12 @@
 ---
-# configuration for vagrant
+# configuration for production
 
-env: development
+env: production
 hostname: bostonjs-vagrant
-base_path: /vagrant/output
+base_path: /vagrant
+public_path: "{{base_path}}/public"
 fqdn: boston-js.loc
-port: 80
+
+api_fqdn: "api.{{fqdn}}"
+api_port: 8080
+api_log_file: /var/log/api

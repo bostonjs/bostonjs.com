@@ -3,3 +3,7 @@
 
 - name: restart nginx
   service: name=nginx state=restarted
+
+
+- name: restart api
+  service: name=api state=restarted
