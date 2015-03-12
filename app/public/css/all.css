@@ -227,19 +227,21 @@ form label{
   display: block;
   margin-bottom: .3em;
 }
-form input {
+form input, form textarea {
   border: 1px solid rgb(197, 197, 197);
   padding: .8em .6em;
   font-size: .8em;
   width: 100%;
 }
-form .info {
+form fieldset.info {
   overflow: auto;
   clear: both;
+  border: none;
+  padding: 0;
+  margin: 0;
 }
 form .field {
   margin: 0 1em 1em 0;
-  float: left;
   width: 100%;
 }
 form button {
@@ -256,9 +258,6 @@ form button:hover {
 }
 
 @media ( min-width: 25em ) {
-  form .field {
-    width: 45%;
-  }
   .primary a { 
     border-width: 3px;
   }
@@ -275,9 +274,6 @@ form button:hover {
     margin: 0 .5em;
     min-width: 1px;
     padding: .5em 4.5em .45em 4.5em;
-  }
-  form .field {
-    width: 30%;
   }
   .col-left {
     width: 70%;

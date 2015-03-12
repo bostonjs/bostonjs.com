@@ -1,16 +1,35 @@
 extends layout
 
 block content
+  if submission
+    .submission-received
+      p Your submission, "#{submission.title}" was received. Check your e-mail for information on how to manage your proposal.
   h2.title-hed Submit a Talk 
+  p Submit your proposal to speak at BostonJS! 
+  p A proposal can be just a 4-5 sentence paragraph, or it can be a full blown deck that you already have prepared. Just be sure to include a title and some sort of description, so we can understand what you plan to present. You can also choose how *long* you'd like to present for, as we know that certain topics and speakers have different time requirements!
+  p We welcome - and encourage - folks with different levels of experience to submit talks! Even if you feel you are "new" or "just learning", consider submitting your idea, or talk to us at a meetup about it! We really believe that everyone in the community has something to offer everyone else in the community regardless of age, gender, race, sexual orientation, or skill level.
+  p BostonJS expects all speakers and attendees to follow the 
+    a(href="http://bocoup.com/community/conduct") Bocoup Code of Conduct.
   form(action='/submit-a-talk/', method='POST', name='submission', id='submisson-form')
-    .info
-      h2 Personal Information
+    fieldset.info
+      h2 About Your Talk
+      .field
+        label(for='title') Session Title:
+        input#title.required(type='text', name='title', required='', value='test title')
+      .field
+        label(for='description') Session Description:
+        textarea#description.required(type='text', name='description', required='', rows=5) Testo Resto Besto
+      .field
+        label(for='notes') Note to Organizers:
+        textarea#notes(type='text', name='notes', rows=4)
+    fieldset.info
+      h2 About You
       .field
         label(for='name') Name
-        input#name.required(type='text', name='name')
+        input#name.required(type='text', name='name', required='', value='testo resto')
       .field
         label(for='email') Email
-        input#email.required(type='email', name='email')
+        input#email.required(type='email', name='email', required='', value='ajpiano+foozers@gmail.com')
       .field
         label(for='website') Website
         input#website(type='text', name='website')
@@ -20,17 +39,5 @@ block content
       .field
         label(for='twitter') Twitter
         input#twitter(type='text', name='twitter')
-      .info
-        h2 Talk Information
-        .field
-          label(for='title') Session Title:
-          input#title.required(type='text', name='title')
-        .field
-          label(for='abstract') Session Description:
-          input#abstract.required(type='text', name='abstract')
-        .field
-          label(for='notes') Note to Organizers:
-          input#notes(type='text', name='notes')
-        input(type='hidden', name='call_id', value='{{ calls.0.id }}')
-      button(type='submit') Submit
+    button(type='submit') Submit
 
