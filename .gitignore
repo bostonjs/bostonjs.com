@@ -2,7 +2,8 @@ node_modules
 KEY
 dev.sqlite3
 tmp
-data
+app/data
 output
 views/pages/details
 config/secrets
+npm-debug.log

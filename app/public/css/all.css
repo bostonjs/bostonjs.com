@@ -235,6 +235,7 @@ form input {
 }
 form .info {
   overflow: auto;
+  clear: both;
 }
 form .field {
   margin: 0 1em 1em 0;

@@ -2,26 +2,6 @@ module.exports = function(grunt) {
   var fs = require('fs');
   var _ = require('lodash');
   require('load-grunt-tasks')(grunt);
-  grunt.loadNpmTasks('assemble');
-
-  grunt.registerTask('disassemble', 'Generates individual files and templates from event API data', function() {
-    var src = this.options().src;
-    var d_dest = this.options().d_dest;
-    var t_dest = this.options().t_dest;
-    var tmpl = this.options().tmpl;
-    var events = grunt.file.readJSON(src);
-    var lastIndex = events.length - 1;
-    _.chain(events).sortBy('date_start').value().forEach(function(event, index) {
-      grunt.file.write(d_dest + "event" + event.id + '.json', JSON.stringify(event));
-      grunt.file.write(t_dest + "event" + event.id + '.hbs', tmpl.replace('detailID', "event" + event.id));
-      // Handle the last element (the most recent meetup) specially, so that it is also the main site homepage
-      if ( index === lastIndex ) {
-        grunt.file.write(d_dest + 'index.json', JSON.stringify(event));
-        grunt.file.write(t_dest + 'index.hbs', tmpl.replace('detailID', "index"));
-      }
-    });
-    grunt.log.writeln(events.length + ' files written');
-  });
 
   grunt.initConfig({
     pkg: '<json:package.json>',
@@ -29,9 +9,10 @@ module.exports = function(grunt) {
     clean: {
       output: ['output'],
       tmp: ['tmp'],
-      details: ['views/pages/details/']
+      data: ['data/*.json']
     },
 
+    /*
     concat: {
       options: {
       },
@@ -69,57 +50,18 @@ module.exports = function(grunt) {
         dest: 'output'
       }
     },
-
+*/
     http: {
-      nest: {
+      meetup: {
         options: {
-          url: 'http://api.bocoup.com/events?access_token=' + fs.readFileSync('./data/KEY').toString().trim()
+          url: 'https://api.meetup.com/2/events/',
+          qs: {
+            "group_urlname": "boston_JS",
+            "key": fs.readFileSync('./app/data/KEY').toString().trim(),
+            "status": "upcoming,past"
+          }
         },
-        dest: 'data/events.json' 
-      }
-    },
-
-    disassemble: {
-      options: {
-        src: '<%= http.nest.dest %>',
-        d_dest: 'data/',
-        t_dest: 'views/pages/details/',
-        tmpl: fs.readFileSync('./views/pages/detail.hbs').toString().trim()
-      }
-    },
-
-    assemble: {
-      options: {
-        flatten: true,
-        layout: ['views/templates/layout.hbs'],
-        helpers: ['helper-moment', 'views/helpers/*.js'],
-        partials: ['views/partials/*.hbs'],
-        data: ['data/*.json']
-      },
-      events: {
-        src: 'views/pages/events.hbs',
-        dest: 'tmp/',
-        expand: true,
-        rename: function(dest, src) {
-          return dest + 'events/index.html';
-        }
-      },
-      homepage: {
-        src: 'views/pages/details/index.hbs',
-        dest: 'tmp/',
-        expand: true,
-        rename: function(dest, src) {
-          return dest + 'index.html';
-        }
-      },
-      details: {
-        src: 'views/pages/details/event*.hbs',
-        dest: 'tmp/',
-        expand: true,
-        rename: function(dest, src) {
-          var replacement = dest + "events/" + src.replace("views/pages/details/","").replace("event","").replace(".hbs","") + "/index.html";
-          return replacement;
-        }
+        dest: 'app/data/meetups.json'
       }
     },
 
@@ -153,15 +95,14 @@ module.exports = function(grunt) {
     'clean'
   ]);
 
-  grunt.registerTask('build', 'Build the static site.', [
+  grunt.registerTask('build', 'Build static resources.', [
     'clean:output',
-    'copy',
-    'concat',
+    'clean:data',
+    //'copy',
+    //'concat',
     'http',
-    'disassemble',
-    'assemble',
-    'htmlmin',
-    'cssmin',
+    //'htmlmin',
+    //'cssmin',
     'clean:tmp'
   ]);
 

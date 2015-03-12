@@ -1,0 +1,23 @@
+doctype html(lang='en')
+html
+head
+    meta(charset='utf-8')
+    title Boston JS
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='/css/fonts.css')
+    link(rel='stylesheet', href='/css/all.css')
+    script#initialjs(src='/js/initial.js')
+    meta(name='description', content='Boston.JS')
+    link(rel='shortcut icon', href='img/favicon.ico', type='image/x-icon')
+  body
+    include ./partials/header
+    .main-container
+      .main.wrapper.clearfix
+        .wrap
+          .sidebar
+            include ./partials/sidebar
+          .col-left
+            block content
+          include ./partials/sponsors
+      include ./partials/coc
+    include ./partials/footer

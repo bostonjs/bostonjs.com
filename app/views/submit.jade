@@ -1,0 +1,36 @@
+extends layout
+
+block content
+  h2.title-hed Submit a Talk 
+  form(action='/submit-a-talk/', method='POST', name='submission', id='submisson-form')
+    .info
+      h2 Personal Information
+      .field
+        label(for='name') Name
+        input#name.required(type='text', name='name')
+      .field
+        label(for='email') Email
+        input#email.required(type='email', name='email')
+      .field
+        label(for='website') Website
+        input#website(type='text', name='website')
+      .field
+        label(for='company') Company
+        input#company(type='text', name='company')
+      .field
+        label(for='twitter') Twitter
+        input#twitter(type='text', name='twitter')
+      .info
+        h2 Talk Information
+        .field
+          label(for='title') Session Title:
+          input#title.required(type='text', name='title')
+        .field
+          label(for='abstract') Session Description:
+          input#abstract.required(type='text', name='abstract')
+        .field
+          label(for='notes') Note to Organizers:
+          input#notes(type='text', name='notes')
+        input(type='hidden', name='call_id', value='{{ calls.0.id }}')
+      button(type='submit') Submit
+

@@ -1,0 +1,4 @@
+h2.event
+  span.meta
+    b.num ##{meetup.index} – #{moment(meetup.time).format("MMMM Do, YYYY")}
+  a(href="/events/#{meetup.index}") #{meetup.name}
