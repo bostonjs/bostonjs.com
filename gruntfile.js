@@ -9,7 +9,7 @@ module.exports = function(grunt) {
     clean: {
       output: ['output'],
       tmp: ['tmp'],
-      data: ['data/*.json']
+      data: ['app/data/*.json']
     },
 
     /*
