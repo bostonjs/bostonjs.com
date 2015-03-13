@@ -6,7 +6,8 @@
   "scripts": {
     "get-secrets": "./.bin/get-secrets",
     "provision": "ansible-playbook -i deploy/ansible/hosts deploy/ansible/provision.yml",
-    "deploy": "ansible-playbook -i deploy/ansible/hosts deploy/ansible/deploy.yml"
+    "deploy": "ansible-playbook -i deploy/ansible/hosts deploy/ansible/deploy.yml",
+    "start": "node index"
   },
   "dependencies": {
     "body-parser": "^1.12.0",

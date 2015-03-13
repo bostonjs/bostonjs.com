@@ -1,14 +1,14 @@
----
-# deploy production machine for live use
+# provision machine and deploy code
 
-- hosts:
-    - production
-  remote_user: ubuntu
+- hosts: all
+  gather_facts: false
   sudo: yes
   roles:
     - base
     - configure
     - nginx
-    - startup
+    - services
   handlers:
     - include: handlers/handlers.yml
+
+- include: deploy.yml

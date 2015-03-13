@@ -13,6 +13,7 @@ This is the www home of the [Boston JS Meetup](http://www.meetup.com/boston_JS/)
 - [Ashley Williams](http://twitter.com/ag_dubs)
 - [Adam Sontag](http://twitter.com/ajpiano)
 - [Boaz Sender](http://twitter.com/boazsender)
+- [Mat Marquis](http://twitter.com/wilto)
 
 ## How-to
 
@@ -24,15 +25,11 @@ This is the www home of the [Boston JS Meetup](http://www.meetup.com/boston_JS/)
 
   From the root directory, run `npm install`.
 
-#### 3. Start a node server
+#### 3. Start the app server
 
-  From the root directory, run `node app.js`.
+  From the root directory, run `node index.js`.
 
-#### 4. Load data from meetup
-
-  In your browser, visit `http://localhost:3000/get_events`.
-
-#### 5. View index and detail
+#### 4. View index and detail
 
 -  `/` will give you the most recent event
 -  `/events` will give you an index of all events, linked to their meetup page

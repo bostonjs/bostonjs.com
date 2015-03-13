@@ -1,8 +1,0 @@
----
-# configuration for vagrant
-
-env: development
-hostname: bostonjs-vagrant
-base_path: /vagrant/output
-fqdn: boston-js.loc
-port: 80
