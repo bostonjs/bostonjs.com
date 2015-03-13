@@ -7,3 +7,4 @@ output
 views/pages/details
 config/secrets
 npm-debug.log
+.vagrant/
