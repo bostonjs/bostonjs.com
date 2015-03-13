@@ -4,10 +4,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "get-secrets": "./.bin/get-secrets",
-    "provision": "ansible-playbook -i deploy/ansible/hosts deploy/ansible/provision.yml",
-    "deploy": "ansible-playbook -i deploy/ansible/hosts deploy/ansible/deploy.yml",
-    "start": "grunt && node index"
+    "build": "grunt"
   },
   "dependencies": {
     "body-parser": "^1.12.0",
