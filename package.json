@@ -4,7 +4,8 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "build": "grunt"
+    "build": "grunt",
+    "start": "node index"
   },
   "dependencies": {
     "body-parser": "^1.12.0",
