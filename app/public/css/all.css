@@ -129,18 +129,19 @@ img {
   content: "";
   display: block;
 }
-.primary a, .sidebar a.call {
+.primary a,
+.btn {
   border: solid #3b3b3b;
   border-width: 2px 2px 2px 2px;
   color: #FBDF66;
+  font-family: Klinik, serif;
   font-weight: bold;
   font-size: 1.1em;
   text-transform: uppercase;
-  min-width: 33%;
-  padding: .2em.5em;
+  padding: .2em .5em;
   background: #3b3b3b;
 }
-.primary a:hover, .sidebar a.call:hover {
+.primary a:hover, .btn:hover {
   background: #FBDF66;
   color: #3b3b3b;
 }
@@ -197,11 +198,15 @@ h2.event {
   margin-top: 4em;
   clear: both;
 }
+.title-subhed,
 .title-hed {
   background: #ffeb94;
   display: inline-block;
   margin-left: -40em;
   padding: .3em .75em .25em 40em;
+}
+.title-subhed {
+  font-size: 1.1em;
 }
 .logos {
   clear: both;
@@ -241,33 +246,49 @@ h2.event {
   font-size: .8em;
   margin: 0;
 }
-form label{
+label {
   display: block;
-  margin-bottom: .3em;
+  font-weight: bold;
+  font-family: Klinik, serif;
+  margin: .4em 0 2em 0;
+  text-transform: uppercase;
 }
-form input, form textarea {
-  border: 1px solid rgb(197, 197, 197);
-  padding: .8em .6em;
-  font-size: .8em;
+label .note {
+  font-size: .9em;
+  text-transform: lowercase;
+  font-style: italic;
+  padding-left: .25em;
+  color: #999;
+}
+input, textarea {
+  background: #f4f4f4;
+  border: solid #d0d0d0;
+  border-width: 0 0 4px 0;
+  font-family: Open Sans, sans-serif;
+  padding: .8em .6em .7em .6em;
+  font-size: 1em;
   width: 100%;
+}
+input[value], textarea[value],
+input:focus, textarea:focus {
+  background: none;
+  outline: none;
+  border: solid #fadf6e;
+  border-width: 0 0 4px 0;
 }
 form fieldset.info {
   overflow: auto;
   clear: both;
   border: none;
-  padding: 0;
+  padding: 2em 0 0 0;
   margin: 0;
 }
 form .field {
   margin: 0 1em 1em 0;
   width: 100%;
 }
-form button {
-  border: none;
-  background: #00A3DA;
-  color: white;
-  font-size: 1em;
-  padding: .8em 2em;
+form button.btn {
+  padding: .5em 2.25em;
   margin-top: 1em;
   cursor: pointer;
 }

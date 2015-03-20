@@ -11,33 +11,37 @@ block content
   p BostonJS expects all speakers and attendees to follow the 
     a(href="http://bocoup.com/community/conduct") Bocoup Code of Conduct.
   form(action='/submit-a-talk/', method='POST', name='submission', id='submisson-form')
+    h3.title-subhed About Your Talk
     fieldset.info
-      h2 About Your Talk
       .field
-        label(for='title') Session Title:
         input#title.required(type='text', name='title', required='')
+        label(for='title') Session Title
       .field
-        label(for='description') Session Description:
         textarea#description.required(type='text', name='description', required='', rows=5)
+        label(for='description') Session Description
       .field
-        label(for='notes') Note to Organizers:
         textarea#notes(type='text', name='notes', rows=4)
+        label(for='notes') Note to Organizers
+          span.note (Optional)
+    h3.title-subhed About You
     fieldset.info
-      h2 About You
       .field
-        label(for='name') Name
         input#name.required(type='text', name='name', required='')
+        label(for='name') Name
       .field
-        label(for='email') Email
         input#email.required(type='email', name='email', required='')
+        label(for='email') Email
       .field
-        label(for='website') Website
         input#website(type='text', name='website')
+        label(for='website') Website
+          span.note (Optional)
       .field
-        label(for='company') Company
         input#company(type='text', name='company')
+        label(for='company') Company 
+          span.note (Optional)
       .field
-        label(for='twitter') Twitter
         input#twitter(type='text', name='twitter')
-    button(type='submit') Submit
+        label(for='twitter') Twitter
+          span.note (Optional)
+    button.btn(type='submit') Submit
 
