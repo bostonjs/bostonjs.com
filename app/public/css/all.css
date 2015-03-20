@@ -52,18 +52,33 @@ ul {
   overflow: auto;
   color: #3b3b3b;
 }
-.rsvp h2 {
+.rsvp-hed {
   font-size: 1.3em;
-}
-.rsvp .paul {
-  float: right;
+  line-height: 1.1;
 }
 .rsvp p {
-  margin-bottom: 0
-}
-.rsvp p a { 
+  font-size: .8em;
   display: block;
-  margin: 1em 0;
+  margin: 1.75em 0 .25em 0;
+}
+.proceeds-to {
+  display: inline-block;
+  margin: 0 auto;
+}
+.proceeds-to img {
+  display: block;
+  float: left;
+  border: 3px solid #3b3b3b;
+}
+.paul {
+  background: url(../img/paul-revere.jpg) right bottom no-repeat;
+  background-size: auto 25%;
+  padding-bottom: 95px;
+}
+@media( min-width: 32em ) and ( max-width: 44.9375em ) {
+  .paul {
+    padding-bottom: 20px;
+  }
 }
 .a11y-hide {
   color: transparent;
@@ -322,13 +337,9 @@ form button:hover {
     padding-right: 2em;
   }
   .sidebar {
-    width: 30%;
+    width: 35%;
     float: right;
     margin-top: 1.5em;
-  }
-  .paul {
-    background-image: url(../img/paul-revere.jpg);
-    width: 185px;
-    height: 134px;
+    margin-left: 3em;
   }
 }
