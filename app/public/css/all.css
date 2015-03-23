@@ -55,6 +55,7 @@ ul {
 .rsvp-hed {
   font-size: 1.3em;
   line-height: 1.1;
+  padding: 0 .5em;
 }
 .rsvp p {
   font-size: .8em;
