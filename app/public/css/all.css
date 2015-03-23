@@ -230,9 +230,11 @@ h2.event {
   margin-top: 1em;
 }
 .coc p {
+  font-family: Klinik, serif;
+  font-size: 1.3em;
   line-height: 1.4;
   margin: 1.5em auto 1.4em auto;
-  max-width: 350px;
+  max-width: 400px;
   text-align: center;
   width: 90%;
 }
