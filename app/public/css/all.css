@@ -218,8 +218,10 @@ h2.event {
   width: 450px;
 }
 .sponsor-call {
+  color: #777;
   display: block;
   font-family: Open Sans, sans-serif;
+  line-height: 1.65;
   text-align: center;
 }
 .coc {
