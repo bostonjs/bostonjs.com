@@ -171,6 +171,13 @@ h2.event {
   font-size: .5em;
   display: block;
 }
+.eventhead h2.event {
+  font-size: 2.2em;
+  margin-bottom: 1em;
+}
+.eventhead h2.event .meta {
+  font-size: .4em;
+}
 .event .num {
   background: #ffeb94;
   display: inline-block;
