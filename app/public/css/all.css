@@ -187,6 +187,11 @@ h2.event {
   margin-bottom: .5em;
   padding: .1em .2em .2em .2em;
 }
+h2.event > a {
+  display: inline-block;
+  margin-bottom: .3em;
+}
+
 .past-events ul {
   margin: .25em 0em 2em 0em;
 }

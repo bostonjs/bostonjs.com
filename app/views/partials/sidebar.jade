@@ -1,10 +1,14 @@
+- console.log(meetup);
 .rsvp.paul
   h2.rsvp-hed
     | The British Are Coming!
     br
     | Are You?
-  a.btn.call(href='#') RSVP $5
+  if meetup
+    a.btn.call(href='#{meetup.event_url}') RSVP $5
+  else
+    a.btn.call(href='http://meetup.com/boston_js') RSVP $5
   p
-    | All proceeds go to:
+    | Proceeds go to:
   a(href='http://scienceclubforgirls.org/', target='blank').proceeds-to
     img(src='/img/scfg.jpg', alt='Science Club for Girls Logo')
