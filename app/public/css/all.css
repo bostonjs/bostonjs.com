@@ -380,7 +380,7 @@ form button:hover {
     margin-top: 1.5em;
     margin-left: 3em;
   }
-  .event {
+  h2.event {
     width: 50%;
   }
 }
