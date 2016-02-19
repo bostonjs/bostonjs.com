@@ -37,3 +37,10 @@ This is the www home of the [Boston JS Meetup](http://www.meetup.com/boston_JS/)
 
 #### Deployment
 `(cd deploy/ansible && ansible-playbook --ask-sudo-pass -i inventory/production deploy.yml)`
+
+
+#### Seeing new meetups that you created on meetup.com on the website
+
+You have to run a deploy to get the site to see new meetups after you add them on meetup.com
+If, after a deploy, the changes still do not appear to have happened, ssh into the machine and do
+`sudo service site restart`. This will be fixed when #27 is closed.
