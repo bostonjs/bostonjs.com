@@ -7,7 +7,7 @@ const BODY_LIMIT = '500kb';
 
 var app = express();
 var transporter = nodemailer.createTransport();
-app.locals.moment = require('moment');
+var moment = app.locals.moment = require('moment');
 var meetups = _.map(require('./data/meetups').results, function(m, i) {
   m.index = i+1;
   return m;
@@ -22,8 +22,13 @@ app.set('view engine', 'jade');
 app.set('views', __dirname + '/views');
 
 app.get('/', function(req, res){
+  var now = moment();
+  var upcoming = _.takeRightWhile(meetups, function(m){ 
+    return moment(m.time).isAfter(now);
+  });
+  var meetup = upcoming.length ? upcoming[ 0 ] : meetup[ meetups.length -1 ];
   res.render('index', {
-    meetup: meetups[ meetups.length - 1 ],
+    meetup: meetup,
     meetups: meetups
   });
 });
