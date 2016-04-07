@@ -1,6 +1,6 @@
 # Boston JS
 
-![boston skyline](public/img/skyline.png)
+![boston skyline](app/public/img/skyline.png)
 
 ## What
 
@@ -10,9 +10,11 @@ This is the www home of the [Boston JS Meetup](http://www.meetup.com/boston_JS/)
 
 ## Who
 
-- [Ashley Williams](http://twitter.com/ag_dubs)
 - [Adam Sontag](http://twitter.com/ajpiano)
 - [Boaz Sender](http://twitter.com/boazsender)
+- [Gregor Martynus](https://twitter.com/gr2m)
+- [Jory Burson](http://twitter.com/jorydotcom)
+- [K Adam White](https://twitter.com/kadamwhite)
 - [Mat Marquis](http://twitter.com/wilto)
 
 ## How-to

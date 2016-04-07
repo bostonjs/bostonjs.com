@@ -23,7 +23,7 @@ app.set('views', __dirname + '/views');
 
 app.get('/', function(req, res){
   var now = moment();
-  var upcoming = _.takeRightWhile(meetups, function(m){ 
+  var upcoming = _.takeRightWhile(meetups, function(m){
     return moment(m.time).isAfter(now);
   });
   var meetup = upcoming.length ? upcoming[ 0 ] : meetup[ meetups.length -1 ];
@@ -46,13 +46,17 @@ app.get('/events/', function(req, res){
   });
 });
 
+app.get('/chat/', function(req, res) {
+  res.redirect('https://bostonjs.herokuapp.com/');
+});
+
 app.get('/submit-a-talk/', function(req, res){
   res.render('submit');
 });
 
 app.post('/submit-a-talk/', function(req, res){
   var form = req.body;
-  var destination = 'bocoup+38004@submissions.submittable.com'; 
+  var destination = 'bocoup+38004@submissions.submittable.com';
   var submissionContents = [
     '#name:' + form.name,
     '#email:' + form.email,

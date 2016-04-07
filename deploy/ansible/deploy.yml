@@ -2,7 +2,8 @@
 
 - hosts: all
   gather_facts: false
-  sudo: yes
+  become: yes
+  become_method: sudo
   vars:
     commit: master
     force: false
@@ -11,7 +12,7 @@
   handlers:
     - include: handlers/handlers.yml
 
-  tasks: 
+  tasks:
     - name: (re)start services
       command: /bin/true
       notify: restart site
