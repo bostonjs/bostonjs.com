@@ -1,4 +1,4 @@
-git_repo: git@github.com:bostonjs/bostonjs.com.git
+git_repo: https://github.com/bostonjs/bostonjs.com
 base_path: /mnt
 site_path: "{{base_path}}/site"
 clone_path: "{{base_path}}/temp"
