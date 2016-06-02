@@ -40,6 +40,11 @@ This is the www home of the [Boston JS Meetup](http://www.meetup.com/boston_JS/)
 #### Deployment
 `(cd deploy/ansible && ansible-playbook --ask-sudo-pass -i inventory/production deploy.yml)`
 
+To get changes to show up on the site, you may need to SSH into the box and run these commands from the site root (`/mnt/site/`):
+
+- `sudo npm run build` (runs `grunt`, specifically we care about the `http` grunt task to download the latest meetup data)
+- `sudo service site restart` (restarts the website)
+
 
 #### Seeing new meetups that you created on meetup.com on the website
 
