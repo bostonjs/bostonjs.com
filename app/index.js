@@ -26,7 +26,7 @@ app.get('/', function(req, res){
   var upcoming = _.takeRightWhile(meetups, function(m){
     return moment(m.time).isAfter(now);
   });
-  var meetup = upcoming.length ? upcoming[ 0 ] : meetup[ meetups.length -1 ];
+  var meetup = upcoming.length ? upcoming[ 0 ] : meetups[ meetups.length -1 ];
   res.render('index', {
     meetup: meetup,
     meetups: meetups
