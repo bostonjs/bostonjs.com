@@ -16,9 +16,19 @@ users:
     shadow_pass: $6$rounds=100000$gJ5dfCfjy3DlFJ7C$FXP0bL.By3gLq811ygKd1eRJRavvBOEATx34PbTxyI8y9st3x0v6XnmERZoQ0tJdliMW18/jzbSJYm9IZvzwE/
     groups: sudo
     shell: /bin/bash
+  - name: kadam
+    real_name: k adam white
+    state: present
+    shadow_pass: $1$7DHNRLR6$xeHLk/4vd9vXqa3lqfk3R/
+    groups: sudo
+    shell: /bin/bash
 
 keys:
   - user: ajpiano
     state: present
     key: ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAu/7k6bSQ1EwLXyfZqM9tw7K/3WB4jIgIW2Jmb1rnGdqeJ7jX3ezAAPJEqoSwvGFZoTONC35OLnNvUwvfo/96Es/9q+qnZZMCnktAFamUlzdbyGudnMq7GkRqzdk9BhaaD5R5Pv0mVSvKMNxn3oVvdKmJpZK8NRpFkY0L3y2WcVp+KgH9ucdNN7bF9O9QZIGFhDEQBBwJYym7zwm9pERrZNoKN6NrLin+pCkZDohQMotxZmLySmCviaFFL9/HTm5GC+SoIr9s5CQFchHlrAWbDjnbpLnfz4dkFU1Ksg78c4saITgN7Zsn2EEI5ON/nJPLfoz1qRubrus4FHyX9QuGwQ== ajpiano@ajpiano.com
+  - user: kadam
+    state: present
+    key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDBVSVTzjdM/Iq/xMGCdd0Z8aRZL8RUdbIQXqmkmfx3cHT3I3TTIimC9X5+Li53U4BWu6oGRrm5n6Xe3ksx/6CRYKnIDPuSxEOmojGL+Jzt0Zh6SHd4FwackYFKIcJC1R14hdj34yh73sdcYpukg5ok4d+ddvyZTi3szlomuP4rA4ANMMJell8Mssaf4mYGghey19SsvJt8YcyVl2CkkuxZO+i2+4kBT/CFO8baUkyntAvEvR23TjCYCk+RL3HKjk2HxisMRaQZuAUfjkeg8yBa5VBMKHw4FAPr879Zbd+PrfU8yOsR0jlSk+L26oLxul8Sxy68602hXuCBBtskpvcdy3fCpNocbp4VoUNm3oNgC6MRUKsjUn+rZ7+bzm4PjFTiiyRRyGwE7DqRlr6bcQYidf93hYokH1zWXJNthFVcx5LIozjsaOoK1+lkF4wb3EDprQ3oVRU9M18I82i/WNM5AHybx6xCgX83yam7G8euD8m6ovtYb6MGCT/oTDPJF9OasGlwLBbI/fIjqgp3rGHepsEcIA3fcjiZiCg8i1rStWQ3CQCOHvpN9ooySladYnjDD8cJhhJiqFpepVKER4724Aaac0dgK9h2JmNsGYZIJ9S3ctaRyNZsNNiLlzpP0o20Y2EUqE3R+p2ZdeYAoDz4qoP48nA1YrmBSNCKcBh1pQ== kadamwhite@gmail.com
+
 
