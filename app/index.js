@@ -1,5 +1,4 @@
 const express = require('express');
-require('jade');
 const _ = require('lodash');
 const bodyParser = require('body-parser');
 const BODY_LIMIT = '500kb';
