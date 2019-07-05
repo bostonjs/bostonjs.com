@@ -1,12 +1,10 @@
 const express = require('express');
-const jade = require('jade');
+require('jade');
 const _ = require('lodash');
 const bodyParser = require('body-parser');
-const nodemailer = require('nodemailer');
 const BODY_LIMIT = '500kb';
 
 var app = express();
-var transporter = nodemailer.createTransport();
 var moment = app.locals.moment = require('moment');
 var meetups = _.map(require('./data/meetups').results, function(m, i) {
   m.index = i+1;
@@ -47,41 +45,11 @@ app.get('/events/', function(req, res){
 });
 
 app.get('/chat/', function(req, res) {
-  res.redirect('https://bostonjs.herokuapp.com/');
+  res.redirect('https://boston-javascript-slackin.herokuapp.com/');
 });
 
 app.get('/submit-a-talk/', function(req, res){
-  res.render('submit');
-});
-
-app.post('/submit-a-talk/', function(req, res){
-  var form = req.body;
-  var destination = 'bocoup+38004@submissions.submittable.com';
-  var submissionContents = [
-    '#name:' + form.name,
-    '#email:' + form.email,
-    '\n',
-    '<strong>Description</strong>',
-    form.description || '',
-    '\n',
-    '/--JSON--/',
-    JSON.stringify(form),
-    '/----/'
-  ];
-  transporter.sendMail({
-    from: 'submittable-relayer@bocoup.com', // Not a real e-mail address (yet)
-    to: destination,
-    subject: form.title,
-    text: submissionContents.join('\n')
-  }, function(error, info) {
-    if ( error ) {
-      console.log( error );
-      res.status(400).json({error: error});
-    }
-    res.render('submit', {submission: req.body});
-    //res.json({success: 'Your submission, "' + form.title +'", has been received. You should receive a confirmation in your e-mail shortly!'});
-
-  });
+  res.redirect('https://www.meetup.com/boston_JS/events/262286359/');
 });
 
 module.exports = app;
