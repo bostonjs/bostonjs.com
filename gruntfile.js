@@ -25,31 +25,6 @@ module.exports = function(grunt) {
         dest: 'app/data/meetups.json'
       }
     },
-
-    htmlmin: {
-      options: {
-        removeComments: true,
-        collapseWhitespace: true
-      },
-      build: {
-        expand: true,
-        cwd: 'tmp',
-        src: ['*.html', '**/*.html'],
-        dest: 'output'
-      }
-    },
-
-    cssmin: {
-      options: {
-        stripBanners: true
-      },
-      css_main: {
-        src: [
-          '<%= concat.css_main.dest %>'
-        ],
-        dest: '<%= concat.css_main.dest %>'
-      }
-    }
   });
 
   grunt.registerTask('cleanse', 'Clean up all generated/assembled content.', [
@@ -59,11 +34,7 @@ module.exports = function(grunt) {
   grunt.registerTask('build', 'Build static resources.', [
     'clean:output',
     'clean:data',
-    //'copy',
-    //'concat',
     'http',
-    //'htmlmin',
-    //'cssmin',
     'clean:tmp'
   ]);
 
