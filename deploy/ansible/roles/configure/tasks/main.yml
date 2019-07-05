@@ -63,3 +63,10 @@
 
 - name: log file exists
   file: path={{site_log_file}} state=touch owner={{site_user}} group={{site_group}}
+
+- name: fetches data from meetup daily
+  cron:
+    name: fetch
+    special_time: daily
+    job: "cd {{site_path}} && npm run fetch >> /var/log/data-fetch 2>&1 && sudo service site restart"
+  notify: restart site
