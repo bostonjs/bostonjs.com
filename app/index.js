@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({ limit: BODY_LIMIT, extended: true }));
 
 app.use(express.static(__dirname + '/public'));
 
-app.set('view engine', 'jade');
+app.set('view engine', 'pug');
 app.set('views', __dirname + '/views');
 
 app.get('/', function(req, res){

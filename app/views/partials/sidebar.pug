@@ -5,7 +5,7 @@
     br
     | Are You?
   if meetup
-    a.btn.call(href='#{meetup.event_url}') RSVP
+    a.btn.call(href=meetup.event_url) RSVP
   else
     a.btn.call(href='http://meetup.com/boston_js') RSVP
   p

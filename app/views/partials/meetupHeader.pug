@@ -1,5 +1,5 @@
 h2.event
   span.meta
     b.num ##{meetup.index} – #{moment(meetup.time + meetup.utc_offset).format("MMMM Do, YYYY @ h:mm a")}
-  a(href="/events/#{meetup.index}") #{meetup.name}
+  a(href=`/events/${meetup.index}`) #{meetup.name}
   span.meta.venue #{meetup.venue.name} - #{meetup.venue.address_1}, #{meetup.venue.city} #{meetup.venue.state}
