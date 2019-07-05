@@ -4,8 +4,8 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "build": "grunt",
-    "start": "node index"
+    "start": "node index",
+    "fetch": "node get-meetups-data"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
@@ -13,14 +13,7 @@
     "jade": "^1.11.0",
     "lodash": "^4.17.11",
     "moment": "^2.24.0",
-    "request-promise": "^4.2.4"
-  },
-  "devDependencies": {
-    "grunt": "^1.0.4",
-    "grunt-cli": "^1.3.2",
-    "grunt-contrib-clean": "^2.0.0",
-    "grunt-contrib-watch": "1.1.0",
-    "grunt-http": "^2.3.2",
-    "load-grunt-tasks": "^5.0.0"
+    "node-fetch": "^2.6.0",
+    "qs": "^6.7.0"
   }
 }
