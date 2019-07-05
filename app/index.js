@@ -5,8 +5,8 @@ const BODY_LIMIT = '500kb';
 
 var app = express();
 var moment = app.locals.moment = require('moment');
-var meetups = _.map(require('./data/meetups').results, function(m, i) {
-  m.index = i+1;
+var meetups = require('./data/meetups').results.map(function(m, i) {
+  m.index = i + 1;
   return m;
 });
 
