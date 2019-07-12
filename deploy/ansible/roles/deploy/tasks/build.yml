@@ -8,7 +8,7 @@
 - name: copy KEY file into place
   shell: mkdir -p {{clone_path}}/app/data && cp {{base_path}}/KEY {{clone_path}}/app/data/KEY
 
-- name: build production version
-  shell: npm run build
+- name: fetch website data
+  shell: npm run fetch
   args:
     chdir: "{{clone_path}}"

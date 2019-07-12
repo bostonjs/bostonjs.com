@@ -2,7 +2,7 @@
 
 - hosts: all
   gather_facts: false
-  sudo: yes
+  become: yes
   roles:
     - base
     - configure

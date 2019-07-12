@@ -9,6 +9,26 @@ site_group: www-data
 site_port: 8080
 site_log_file: /var/log/site
 
+timezone: US/Eastern
+
+# Keys to be added to apt.
+apt_keys:
+  - "https://deb.nodesource.com/gpgkey/nodesource.gpg.key"
+
+# Ppas to be added to apt. Useful ppas (replace trusty with your Ubuntu
+# version codename, if necessary):
+# Node.js 10.x: deb https://deb.nodesource.com/node_10.x trusty main
+apt_ppas:
+  - "ppa:git-core/ppa"
+  - "deb https://deb.nodesource.com/node_10.x trusty main"
+
+# Any apt packages to install. Apt package versions may be specified like
+# - git=2.1.0
+apt_packages:
+  - git
+  - nginx
+  - nodejs
+
 users:
   - name: ajpiano
     real_name: adam j. sontag
@@ -22,6 +42,12 @@ users:
     shadow_pass: $1$7DHNRLR6$xeHLk/4vd9vXqa3lqfk3R/
     groups: sudo
     shell: /bin/bash
+  - name: leo
+    real_name: Leo Balter
+    state: present
+    shadow_pass: $1$rWXkbhR8$iwhkIixgxhaxbnWDhp3Lr.
+    groups: sudo
+    shell: /bin/bash
 
 keys:
   - user: ajpiano
@@ -30,5 +56,6 @@ keys:
   - user: kadam
     state: present
     key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDBVSVTzjdM/Iq/xMGCdd0Z8aRZL8RUdbIQXqmkmfx3cHT3I3TTIimC9X5+Li53U4BWu6oGRrm5n6Xe3ksx/6CRYKnIDPuSxEOmojGL+Jzt0Zh6SHd4FwackYFKIcJC1R14hdj34yh73sdcYpukg5ok4d+ddvyZTi3szlomuP4rA4ANMMJell8Mssaf4mYGghey19SsvJt8YcyVl2CkkuxZO+i2+4kBT/CFO8baUkyntAvEvR23TjCYCk+RL3HKjk2HxisMRaQZuAUfjkeg8yBa5VBMKHw4FAPr879Zbd+PrfU8yOsR0jlSk+L26oLxul8Sxy68602hXuCBBtskpvcdy3fCpNocbp4VoUNm3oNgC6MRUKsjUn+rZ7+bzm4PjFTiiyRRyGwE7DqRlr6bcQYidf93hYokH1zWXJNthFVcx5LIozjsaOoK1+lkF4wb3EDprQ3oVRU9M18I82i/WNM5AHybx6xCgX83yam7G8euD8m6ovtYb6MGCT/oTDPJF9OasGlwLBbI/fIjqgp3rGHepsEcIA3fcjiZiCg8i1rStWQ3CQCOHvpN9ooySladYnjDD8cJhhJiqFpepVKER4724Aaac0dgK9h2JmNsGYZIJ9S3ctaRyNZsNNiLlzpP0o20Y2EUqE3R+p2ZdeYAoDz4qoP48nA1YrmBSNCKcBh1pQ== kadamwhite@gmail.com
-
-
+  - user: leo
+    state: present
+    key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDNRVyl3IY0XMYFeFmV228wjgLvD67S1yz0buVfi5wV2ybuOvV+2aJAUzshcUIrTfz51/pkpMB7nwNvVZV9IW8zyhKURkUS7UjwzPUxcc5gUw/OzUcllRpJYWNhRTCa8sPw49Un2aU0KjzrPn3OlB8OGOA7An+AnVhf0s2i94GcgH8YLHN1zCZrW8asbmXfO5np+asW9b3+9cZUlxk1YnoIRafRjM0g4m9cW9feDdnFEL9VLvhWd5SNoLE0yBuyTdVsvOf4T/EBV34oPUsRG4hdvCdaaEN2igpzMXPXkiJSdnyZ6JWbcw047oxodwJTNNDwAvxkIAQbylpioX4TZHcX6zpX1R6yV/oCY/2T99kAy8gyMbb9+tggJRHE08HPS4MpJ6K1P6k22+R2Dz8ua4d1BSy1TFVPBIbAwiuvNVcH+nCmjfiBvSQeM0Xlt8N+smbsF05nweLRSm+tNlaSAjz8/Ik5aHdNd3dDz53UEcy/LVI+GhhbxqkL+MT5PKlaiX2K5/GXYnv9FLJQA8rF9tHqAiazOMcQyrkF/5ie0CDjRQniSL7Q7VlBLRCk2PyPJjTrqqpiddpw7nbygLEFV4ryc4pvUI0PQVG1MsXMNNSOMBL3P3Dc1Q6P8xxwGvDOmtu1qAbRokRnpu8HTeXUnO2SiBAEEMUGFYol4bvFK7Zt4Q== leonardo.balter@gmail.com
