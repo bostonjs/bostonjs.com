@@ -3,7 +3,9 @@ const fetch = require('node-fetch');
 const qs = require('qs');
 const path = require('path');
 
-const key = fs.readFileSync(path.join('app', 'data', 'KEY').toString().trim();
+const key = fs.readFileSync(
+  path.join('app', 'data', 'KEY').toString().trim()
+);
 
 const params = {
   group_urlname: 'boston_JS',
